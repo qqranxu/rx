@@ -1,0 +1,15 @@
+proxies:
+  - name: "US-DMIT_Cloud_Services"
+    type: vless
+    server: 154.21.87.154
+    port: 53230
+    uuid: 3971a80f-8186-4b1f-a971-bf9a6812fedc
+    encryption: none
+    flow: xtls-rprx-vision
+    security: reality
+    sni: www.apple.com
+    fp: chrome
+    pbk: YrSQIpq7alXjBD5eUZgMoqTizwOsysUIDeWCO9rkVx8
+    sid: 27c53b2fa12df892
+    type: tcp
+    headerType: none
