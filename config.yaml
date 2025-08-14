@@ -1,15 +1,31 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+
 proxies:
   - name: "US-DMIT_Cloud_Services"
     type: vless
     server: 154.21.87.154
     port: 53230
     uuid: 3971a80f-8186-4b1f-a971-bf9a6812fedc
-    encryption: none
+    network: tcp
+    tls: true
     flow: xtls-rprx-vision
-    security: reality
-    sni: www.apple.com
-    fp: chrome
-    pbk: YrSQIpq7alXjBD5eUZgMoqTizwOsysUIDeWCO9rkVx8
-    sid: 27c53b2fa12df892
-    type: tcp
-    headerType: none
+    reality-opts:
+      public-key: YrSQIpq7alXjBD5eUZgMoqTizwOsysUIDeWCO9rkVx8
+      short-id: 27c53b2fa12df892
+    client-fingerprint: chrome
+    servername: www.apple.com
+
+proxy-groups:
+  - name: "🚀 节点选择"
+    type: select
+    proxies:
+      - US-DMIT_Cloud_Services
+      - DIRECT
+
+rules:
+  - GEOIP,CN,DIRECT
+  - MATCH,🚀 节点选择
