@@ -1,16 +1,34 @@
-# 移动端兼容的Clash配置文件
-# 简化版本，确保在所有客户端都能正常工作
+# Clash Meta 配置文件
+# 支持美国(DMIT)和新加坡 VLESS Reality 节点
 
 mixed-port: 7890
 allow-lan: true
 mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
+unified-delay: true
+global-client-fingerprint: chrome
 
-# 代理节点
+dns:
+  enable: true
+  listen: :53
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver: 
+    - 223.5.5.5
+    - 8.8.8.8
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://1.1.1.1/dns-query
+  fallback:
+    - https://1.0.0.1/dns-query
+    - tls://1.1.1.1
+
+# 代理节点配置
 proxies:
-  # 美国节点
-  - name: "💪 美国高速"
+  # 美国节点 - DMIT Cloud Services
+  - name: "US-DMIT_Cloud_Services"
     type: vless
     server: 154.21.87.154
     port: 53230
@@ -24,8 +42,8 @@ proxies:
       public-key: YrSQIpq7alXjBD5eUZgMoqTizwOsysUIDeWCO9rkVx8
       short-id: 27c53b2fa12df892
 
-  # 新加坡节点
-  - name: "⚡ 新加坡闪电"
+  # 新加坡节点 - 腾讯云
+  - name: "SG-TencentCloud_Singapore"
     type: vless
     server: 43.160.249.106
     port: 16378
@@ -39,33 +57,95 @@ proxies:
       public-key: 3HyXwR6t3iljcV1L5HF16VdPuuPyAyX5gcyz7j6IoQU
       short-id: b57f04a2c23a5881
 
-# 代理组
+# 代理组配置
 proxy-groups:
+  # 主选择组
   - name: "🚀 节点选择"
     type: select
     proxies:
-      - "🔥 自动最快"
-      - "💪 美国高速"
-      - "⚡ 新加坡闪电"
-      - "🏠 回家直连"
+      - "♻️ 自动选择"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "⚖️ 负载均衡"
+      - "US-DMIT_Cloud_Services"
+      - "SG-TencentCloud_Singapore"
+      - DIRECT
 
-  - name: "🔥 自动最快"
+  # 自动选择组 - 基于延迟测试
+  - name: "♻️ 自动选择"
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - "💪 美国高速"
-      - "⚡ 新加坡闪电"
+      - "US-DMIT_Cloud_Services"
+      - "SG-TencentCloud_Singapore"
 
-  - name: "🏠 回家直连"
+  # 新加坡节点组
+  - name: "🇸🇬 新加坡"
     type: select
     proxies:
+      - "SG-TencentCloud_Singapore"
+
+  # 美国节点组
+  - name: "🇺🇸 美国"
+    type: select
+    proxies:
+      - "US-DMIT_Cloud_Services"
+
+  # 负载均衡组
+  - name: "⚖️ 负载均衡"
+    type: load-balance
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    strategy: consistent-hashing
+    proxies:
+      - "US-DMIT_Cloud_Services"
+      - "SG-TencentCloud_Singapore"
+
+  # 流媒体选择
+  - name: "📺 流媒体"
+    type: select
+    proxies:
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "♻️ 自动选择"
+      - "SG-TencentCloud_Singapore"
+      - "US-DMIT_Cloud_Services"
+
+  # 广告拦截
+  - name: "🛑 广告拦截"
+    type: select
+    proxies:
+      - REJECT
       - DIRECT
 
-# 规则
+# 规则配置
 rules:
-  # 国内直连
+  # 广告拦截
+  - DOMAIN-SUFFIX,googlesyndication.com,🛑 广告拦截
+  - DOMAIN-SUFFIX,doubleclick.net,🛑 广告拦截
+  - DOMAIN-KEYWORD,adnxs,🛑 广告拦截
+  - DOMAIN-KEYWORD,adsystem,🛑 广告拦截
+
+  # 流媒体规则
+  - DOMAIN-SUFFIX,netflix.com,📺 流媒体
+  - DOMAIN-SUFFIX,nflximg.net,📺 流媒体
+  - DOMAIN-SUFFIX,youtube.com,📺 流媒体
+  - DOMAIN-SUFFIX,googlevideo.com,📺 流媒体
+
+  # 国外常用服务
+  - DOMAIN-SUFFIX,google.com,🚀 节点选择
+  - DOMAIN-SUFFIX,googleapis.com,🚀 节点选择
+  - DOMAIN-SUFFIX,facebook.com,🚀 节点选择
+  - DOMAIN-SUFFIX,twitter.com,🚀 节点选择
+  - DOMAIN-SUFFIX,telegram.org,🚀 节点选择
+  - DOMAIN-SUFFIX,instagram.com,🚀 节点选择
+  - DOMAIN-SUFFIX,openai.com,🚀 节点选择
+  - DOMAIN-SUFFIX,github.com,🚀 节点选择
+
+  # 中国IP和域名直连
   - GEOIP,CN,DIRECT
+  
   # 最终规则
   - MATCH,🚀 节点选择
