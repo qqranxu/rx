@@ -10,7 +10,7 @@ external-controller: 127.0.0.1:9090
 # 代理节点
 proxies:
   # 美国节点
-  - name: "US-DMIT"
+  - name: "💪 美国高速"
     type: vless
     server: 154.21.87.154
     port: 53230
@@ -25,7 +25,7 @@ proxies:
       short-id: 27c53b2fa12df892
 
   # 新加坡节点
-  - name: "SG-Tencent"
+  - name: "⚡ 新加坡闪电"
     type: vless
     server: 43.160.249.106
     port: 16378
@@ -44,19 +44,24 @@ proxy-groups:
   - name: "🚀 节点选择"
     type: select
     proxies:
-      - "♻️ 自动选择"
-      - "US-DMIT"
-      - "SG-Tencent"
-      - DIRECT
+      - "🔥 自动最快"
+      - "💪 美国高速"
+      - "⚡ 新加坡闪电"
+      - "🏠 回家直连"
 
-  - name: "♻️ 自动选择"
+  - name: "🔥 自动最快"
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - "US-DMIT"
-      - "SG-Tencent"
+      - "💪 美国高速"
+      - "⚡ 新加坡闪电"
+
+  - name: "🏠 回家直连"
+    type: select
+    proxies:
+      - DIRECT
 
 # 规则
 rules:
