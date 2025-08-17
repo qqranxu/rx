@@ -1,5 +1,5 @@
 # Clash Meta 配置文件
-# 支持美国(DMIT)、新加坡、香港 VLESS Reality 节点
+# 支持美国(DMIT)、香港 VLESS Reality 节点
 mixed-port: 7890
 allow-lan: true
 mode: rule
@@ -38,20 +38,6 @@ proxies:
     reality-opts:
       public-key: YrSQIpq7alXjBD5eUZgMoqTizwOsysUIDeWCO9rkVx8
       short-id: 27c53b2fa12df892
-  # 新加坡节点 - 腾讯云
-  - name: "SG-TencentCloud_Singapore"
-    type: vless
-    server: 43.160.249.106
-    port: 16378
-    uuid: a75d0867-aa44-4636-9a08-f43ea2ddf501
-    network: tcp
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: chrome
-    servername: www.apple.com
-    reality-opts:
-      public-key: 3HyXwR6t3iljcV1L5HF16VdPuuPyAyX5gcyz7j6IoQU
-      short-id: b57f04a2c23a5881
   # 香港节点 - Evoxt.com
   - name: "HK-Evoxt.com"
     type: vless
@@ -74,12 +60,10 @@ proxy-groups:
     proxies:
       - "♻️ 自动选择"
       - "🇭🇰 香港"
-      - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "⚖️ 负载均衡"
       - "HK-Evoxt.com"
       - "US-DMIT_Cloud_Services"
-      - "SG-TencentCloud_Singapore"
       - DIRECT
   # 自动选择组 - 基于延迟测试
   - name: "♻️ 自动选择"
@@ -90,17 +74,11 @@ proxy-groups:
     proxies:
       - "HK-Evoxt.com"
       - "US-DMIT_Cloud_Services"
-      - "SG-TencentCloud_Singapore"
   # 香港节点组
   - name: "🇭🇰 香港"
     type: select
     proxies:
       - "HK-Evoxt.com"
-  # 新加坡节点组
-  - name: "🇸🇬 新加坡"
-    type: select
-    proxies:
-      - "SG-TencentCloud_Singapore"
   # 美国节点组
   - name: "🇺🇸 美国"
     type: select
@@ -115,17 +93,14 @@ proxy-groups:
     proxies:
       - "HK-Evoxt.com"
       - "US-DMIT_Cloud_Services"
-      - "SG-TencentCloud_Singapore"
   # 流媒体选择
   - name: "📺 流媒体"
     type: select
     proxies:
       - "🇭🇰 香港"
-      - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "♻️ 自动选择"
       - "HK-Evoxt.com"
-      - "SG-TencentCloud_Singapore"
       - "US-DMIT_Cloud_Services"
   # 广告拦截
   - name: "🛑 广告拦截"
@@ -159,3 +134,4 @@ rules:
   
   # 最终规则
   - MATCH,🚀 节点选择
+
