@@ -1,6 +1,5 @@
 # Clash Meta 配置文件
-# 支持美国(DMIT)和新加坡 VLESS Reality 节点
-
+# 支持美国(DMIT)、新加坡、香港 VLESS Reality 节点
 mixed-port: 7890
 allow-lan: true
 mode: rule
@@ -8,7 +7,6 @@ log-level: info
 external-controller: 127.0.0.1:9090
 unified-delay: true
 global-client-fingerprint: chrome
-
 dns:
   enable: true
   listen: :53
@@ -24,7 +22,6 @@ dns:
   fallback:
     - https://1.0.0.1/dns-query
     - tls://1.1.1.1
-
 # 代理节点配置
 proxies:
   # 美国节点 - DMIT Cloud Services
@@ -41,7 +38,6 @@ proxies:
     reality-opts:
       public-key: YrSQIpq7alXjBD5eUZgMoqTizwOsysUIDeWCO9rkVx8
       short-id: 27c53b2fa12df892
-
   # 新加坡节点 - 腾讯云
   - name: "SG-TencentCloud_Singapore"
     type: vless
@@ -56,7 +52,20 @@ proxies:
     reality-opts:
       public-key: 3HyXwR6t3iljcV1L5HF16VdPuuPyAyX5gcyz7j6IoQU
       short-id: b57f04a2c23a5881
-
+  # 香港节点 - Evoxt.com
+  - name: "HK-Evoxt.com"
+    type: vless
+    server: 166.88.141.45
+    port: 35031
+    uuid: ed88ee33-5b06-4030-b3eb-67b073356f89
+    network: tcp
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    servername: www.apple.com
+    reality-opts:
+      public-key: Q7rFHfawtcb9e344sgOB5QQxZD1GnGJdUQuh_InAZBk
+      short-id: 971b0dd688120c2a
 # 代理组配置
 proxy-groups:
   # 主选择组
@@ -64,13 +73,14 @@ proxy-groups:
     type: select
     proxies:
       - "♻️ 自动选择"
+      - "🇭🇰 香港"
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "⚖️ 负载均衡"
+      - "HK-Evoxt.com"
       - "US-DMIT_Cloud_Services"
       - "SG-TencentCloud_Singapore"
       - DIRECT
-
   # 自动选择组 - 基于延迟测试
   - name: "♻️ 自动选择"
     type: url-test
@@ -78,21 +88,24 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
+      - "HK-Evoxt.com"
       - "US-DMIT_Cloud_Services"
       - "SG-TencentCloud_Singapore"
-
+  # 香港节点组
+  - name: "🇭🇰 香港"
+    type: select
+    proxies:
+      - "HK-Evoxt.com"
   # 新加坡节点组
   - name: "🇸🇬 新加坡"
     type: select
     proxies:
       - "SG-TencentCloud_Singapore"
-
   # 美国节点组
   - name: "🇺🇸 美国"
     type: select
     proxies:
       - "US-DMIT_Cloud_Services"
-
   # 负载均衡组
   - name: "⚖️ 负载均衡"
     type: load-balance
@@ -100,26 +113,26 @@ proxy-groups:
     interval: 300
     strategy: consistent-hashing
     proxies:
+      - "HK-Evoxt.com"
       - "US-DMIT_Cloud_Services"
       - "SG-TencentCloud_Singapore"
-
   # 流媒体选择
   - name: "📺 流媒体"
     type: select
     proxies:
+      - "🇭🇰 香港"
       - "🇸🇬 新加坡"
       - "🇺🇸 美国"
       - "♻️ 自动选择"
+      - "HK-Evoxt.com"
       - "SG-TencentCloud_Singapore"
       - "US-DMIT_Cloud_Services"
-
   # 广告拦截
   - name: "🛑 广告拦截"
     type: select
     proxies:
       - REJECT
       - DIRECT
-
 # 规则配置
 rules:
   # 广告拦截
@@ -127,13 +140,11 @@ rules:
   - DOMAIN-SUFFIX,doubleclick.net,🛑 广告拦截
   - DOMAIN-KEYWORD,adnxs,🛑 广告拦截
   - DOMAIN-KEYWORD,adsystem,🛑 广告拦截
-
   # 流媒体规则
   - DOMAIN-SUFFIX,netflix.com,📺 流媒体
   - DOMAIN-SUFFIX,nflximg.net,📺 流媒体
   - DOMAIN-SUFFIX,youtube.com,📺 流媒体
   - DOMAIN-SUFFIX,googlevideo.com,📺 流媒体
-
   # 国外常用服务
   - DOMAIN-SUFFIX,google.com,🚀 节点选择
   - DOMAIN-SUFFIX,googleapis.com,🚀 节点选择
@@ -143,7 +154,6 @@ rules:
   - DOMAIN-SUFFIX,instagram.com,🚀 节点选择
   - DOMAIN-SUFFIX,openai.com,🚀 节点选择
   - DOMAIN-SUFFIX,github.com,🚀 节点选择
-
   # 中国IP和域名直连
   - GEOIP,CN,DIRECT
   
