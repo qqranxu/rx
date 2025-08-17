@@ -41,6 +41,21 @@ proxies:
       public-key: 2PWxkzwUdfAz_QjH693GaJDX4Az6GF5Zt1wK4K_wdxI
       short-id: feab74f8cd109a5d
 
+  # 香港节点 - x-ui
+  - name: "HK-x-ui"
+    type: vless
+    server: 8.218.245.137
+    port: 37686
+    uuid: b4fdcc63-c5d2-48ed-b9c1-42bc1c68f582
+    network: tcp
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    servername: www.yahoo.com
+    reality-opts:
+      public-key: Nl5Uq0Bb6ZjZr3o1oFpJZxTWshQg45VxnRVGfwEW60g
+      short-id: 3fc52027
+
 # 代理组配置
 proxy-groups:
   # 主选择组
@@ -50,6 +65,7 @@ proxy-groups:
       - "♻️ 自动选择"
       - "🇭🇰 香港"
       - "HK-Alibaba_Cloud"
+      - "HK-x-ui"
       - DIRECT
 
   # 自动选择组 - 基于延迟测试
@@ -60,6 +76,8 @@ proxy-groups:
     tolerance: 50
     proxies:
       - "HK-Alibaba_Cloud"
+      - "HK-x-ui"
+      - "HK-x-ui"
 
   # 香港节点组
   - name: "🇭🇰 香港"
@@ -74,6 +92,7 @@ proxy-groups:
       - "🇭🇰 香港"
       - "♻️ 自动选择"
       - "HK-Alibaba_Cloud"
+      - "HK-x-ui"
 
   # 广告拦截
   - name: "🛑 广告拦截"
