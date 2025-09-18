@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📧 Rambler Email Client</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .language-selector label {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .language-selector select {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .language-selector select option {
+            background: #667eea;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="email"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform 0.2s;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .status.loading {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .status.success {
+            background: #e8f5e8;
+            color: #2e7d32;
+        }
+        
+        .status.error {
+            background: #ffebee;
+            color: #c62828;
+        }
+        
+        .status.warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+        }
+        
+        .emails {
+            margin-top: 30px;
+        }
+        
+        .emails h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e1e5e9;
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .tips {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .language-selector {
+                position: static;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="language-selector">
+                <label for="languageSelect">🌍 Language:</label>
+                <select id="languageSelect" onchange="changeLanguage()">
+                    <option value="en">🇺🇸 English</option>
+                    <option value="id">🇮🇩 Bahasa Indonesia</option>
+                    <option value="hi">🇮🇳 हिन्दी (Hindi)</option>
+                    <option value="tl">🇵🇭 Tagalog</option>
+                    <option value="ms">🇲🇾 Bahasa Melayu</option>
+                </select>
+            </div>
+            
+            <h1 id="headerTitle">📧 Rambler Email Client</h1>
+            <p id="headerSubtitle">Secure, Fast & Simple Email Access Tool</p>
+        </div>
+        
+        <div class="content">
+            <div class="tips">
+                <strong id="tipsTitle">💡 Usage Tips:</strong> 
+                <span id="tipsContent">Please enter your complete Rambler email address (e.g.: example@rambler.ru) and password</span>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email" id="emailLabel">📮 Email Address</label>
+                    <input type="email" id="email" placeholder="example@rambler.ru" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password" id="passwordLabel">🔐 Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                
+                <button type="submit" class="btn" id="loginBtn">
+                    <span id="btnText">🚀 Login & Get Emails</span>
+                </button>
+            </form>
+            
+            <div id="status"></div>
+            <div id="emails" class="emails"></div>
+        </div>
+    </div>
+
+    <script>
+        // 多语言翻译数据
+        const translations = {
+            en: {
+                headerTitle: "📧 Rambler Email Client",
+                headerSubtitle: "Secure, Fast & Simple Email Access Tool",
+                tipsTitle: "💡 Usage Tips:",
+                tipsContent: "Please enter your complete Rambler email address (e.g.: example@rambler.ru) and password",
+                emailLabel: "📮 Email Address",
+                passwordLabel: "🔐 Password",
+                passwordPlaceholder: "Enter your password",
+                btnText: "🚀 Login & Get Emails",
+                connecting: "Connecting...",
+                connectingStatus: "🔄 Connecting to Rambler email server...",
+                successStatus: "✅ Connected successfully! Retrieved {count} emails",
+                errorConnection: "❌ Connection failed: {error}",
+                errorNetwork: "❌ Network error: {error}",
+                staticWarning: "⚠️ This is a static demo. For full functionality, please use the server version.",
+                inboxTitle: "📬 Inbox",
+                noEmails: "No emails found"
+            },
+            id: {
+                headerTitle: "📧 Klien Email Rambler",
+                headerSubtitle: "Alat Akses Email yang Aman, Cepat & Sederhana",
+                tipsTitle: "💡 Tips Penggunaan:",
+                tipsContent: "Silakan masukkan alamat email Rambler lengkap Anda (contoh: example@rambler.ru) dan kata sandi",
+                emailLabel: "📮 Alamat Email",
+                passwordLabel: "🔐 Kata Sandi",
+                passwordPlaceholder: "Masukkan kata sandi Anda",
+                btnText: "🚀 Masuk & Ambil Email",
+                connecting: "Menghubungkan...",
+                connectingStatus: "🔄 Menghubungkan ke server email Rambler...",
+                successStatus: "✅ Berhasil terhubung! Mengambil {count} email",
+                errorConnection: "❌ Koneksi gagal: {error}",
+                errorNetwork: "❌ Kesalahan jaringan: {error}",
+                staticWarning: "⚠️ Ini adalah demo statis. Untuk fungsionalitas penuh, silakan gunakan versi server.",
+                inboxTitle: "📬 Kotak Masuk",
+                noEmails: "Tidak ada email ditemukan"
+            },
+            hi: {
+                headerTitle: "📧 रैम्बलर ईमेल क्लाइंट",
+                headerSubtitle: "सुरक्षित, तेज़ और सरल ईमेल एक्सेस टूल",
+                tipsTitle: "💡 उपयोग की युक्तियाँ:",
+                tipsContent: "कृपया अपना पूरा रैम्बलर ईमेल पता (जैसे: example@rambler.ru) और पासवर्ड दर्ज करें",
+                emailLabel: "📮 ईमेल पता",
+                passwordLabel: "🔐 पासवर्ड",
+                passwordPlaceholder: "अपना पासवर्ड दर्ज करें",
+                btnText: "🚀 लॉगिन करें और ईमेल प्राप्त करें",
+                connecting: "कनेक्ट हो रहा है...",
+                connectingStatus: "🔄 रैम्बलर ईमेल सर्वर से कनेक्ट हो रहा है...",
+                successStatus: "✅ सफलतापूर्वक कनेक्ट हो गया! {count} ईमेल प्राप्त किए",
+                errorConnection: "❌ कनेक्शन असफल: {error}",
+                errorNetwork: "❌ नेटवर्क त्रुटि: {error}",
+                staticWarning: "⚠️ यह एक स्थिर डेमो है। पूर्ण कार्यक्षमता के लिए, कृपया सर्वर संस्करण का उपयोग करें।",
+                inboxTitle: "📬 इनबॉक्स",
+                noEmails: "कोई ईमेल नहीं मिला"
+            },
+            tl: {
+                headerTitle: "📧 Rambler Email Client",
+                headerSubtitle: "Secure, Mabilis at Simpleng Email Access Tool",
+                tipsTitle: "💡 Mga Tip sa Paggamit:",
+                tipsContent: "Pakisuyo ilagay ang inyong kumpletong Rambler email address (hal.: example@rambler.ru) at password",
+                emailLabel: "📮 Email Address",
+                passwordLabel: "🔐 Password",
+                passwordPlaceholder: "Ilagay ang inyong password",
+                btnText: "🚀 Mag-login at Kunin ang mga Email",
+                connecting: "Kumukonekta...",
+                connectingStatus: "🔄 Kumukonekta sa Rambler email server...",
+                successStatus: "✅ Matagumpay na nakakonekta! Nakuha ang {count} mga email",
+                errorConnection: "❌ Hindi makakonekta: {error}",
+                errorNetwork: "❌ Network error: {error}",
+                staticWarning: "⚠️ Ito ay isang static demo. Para sa buong functionality, gamitin ang server version.",
+                inboxTitle: "📬 Inbox",
+                noEmails: "Walang nahanap na email"
+            },
+            ms: {
+                headerTitle: "📧 Klien Email Rambler",
+                headerSubtitle: "Alat Akses Email yang Selamat, Pantas & Mudah",
+                tipsTitle: "💡 Petua Penggunaan:",
+                tipsContent: "Sila masukkan alamat email Rambler lengkap anda (cth: example@rambler.ru) dan kata laluan",
+                emailLabel: "📮 Alamat Email",
+                passwordLabel: "🔐 Kata Laluan",
+                passwordPlaceholder: "Masukkan kata laluan anda",
+                btnText: "🚀 Log Masuk & Dapatkan Email",
+                connecting: "Menyambung...",
+                connectingStatus: "🔄 Menyambung ke pelayan email Rambler...",
+                successStatus: "✅ Berjaya disambung! Mendapat {count} email",
+                errorConnection: "❌ Sambungan gagal: {error}",
+                errorNetwork: "❌ Ralat rangkaian: {error}",
+                staticWarning: "⚠️ Ini adalah demo statik. Untuk fungsi penuh, sila gunakan versi pelayan.",
+                inboxTitle: "📬 Peti Masuk",
+                noEmails: "Tiada email dijumpai"
+            }
+        };
+
+        let currentLanguage = 'en';
+
+        // 语言切换函数
+        function changeLanguage() {
+            const select = document.getElementById('languageSelect');
+            currentLanguage = select.value;
+            updateTexts();
+            localStorage.setItem('selectedLanguage', currentLanguage);
+        }
+
+        // 更新页面文本
+        function updateTexts() {
+            const t = translations[currentLanguage];
+            
+            document.getElementById('headerTitle').textContent = t.headerTitle;
+            document.getElementById('headerSubtitle').textContent = t.headerSubtitle;
+            document.getElementById('tipsTitle').textContent = t.tipsTitle;
+            document.getElementById('tipsContent').textContent = t.tipsContent;
+            document.getElementById('emailLabel').textContent = t.emailLabel;
+            document.getElementById('passwordLabel').textContent = t.passwordLabel;
+            document.getElementById('password').placeholder = t.passwordPlaceholder;
+            document.getElementById('btnText').textContent = t.btnText;
+        }
+
+        // 页面加载时恢复语言设置
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLanguage = localStorage.getItem('selectedLanguage');
+            if (savedLanguage && translations[savedLanguage]) {
+                currentLanguage = savedLanguage;
+                document.getElementById('languageSelect').value = currentLanguage;
+                updateTexts();
+            }
+        });
+
+        // 登录表单提交 (静态版本 - 演示用)
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const status = document.getElementById('status');
+            const emailsDiv = document.getElementById('emails');
+            const loginBtn = document.getElementById('loginBtn');
+            const btnText = document.getElementById('btnText');
+            const t = translations[currentLanguage];
+            
+            // 显示静态演示警告
+            status.innerHTML = `<div class="status warning">${t.staticWarning}</div>`;
+            
+            // 显示加载状态 (演示)
+            loginBtn.disabled = true;
+            btnText.innerHTML = `<span class="loading-spinner"></span>${t.connecting}`;
+            
+            // 模拟加载延迟
+            setTimeout(() => {
+                // 模拟演示数据
+                const demoEmails = [
+                    {
+                        from: 'demo@example.com',
+                        subject: 'Welcome to Rambler Email Client',
+                        date: new Date().toISOString(),
+                        preview: 'This is a demo email showing how the interface works...'
+                    },
+                    {
+                        from: 'support@rambler.ru',
+                        subject: 'Test Email',
+                        date: new Date(Date.now() - 86400000).toISOString(),
+                        preview: 'This is a test email for demonstration purposes...'
+                    }
+                ];
+                
+                status.innerHTML = `<div class="status success">${t.successStatus.replace('{count}', demoEmails.length)} (Demo Mode)</div>`;
+                displayEmails(demoEmails);
+                
+                // 恢复按钮状态
+                loginBtn.disabled = false;
+                btnText.textContent = t.btnText;
+            }, 2000);
+        });
+        
+        function displayEmails(emails) {
+            const emailsDiv = document.getElementById('emails');
+            const t = translations[currentLanguage];
+            
+            if (emails.length === 0) {
+                emailsDiv.innerHTML = `<h2>${t.inboxTitle}</h2><p>${t.noEmails}</p>`;
+                return;
+            }
+            
+            emailsDiv.innerHTML = `<h2>${t.inboxTitle} (Demo)</h2>`;
+            
+            emails.forEach((email, index) => {
+                const emailDiv = document.createElement('div');
+                emailDiv.className = 'email-item';
+                emailDiv.style.cssText = 'border: 1px solid #e1e5e9; padding: 20px; margin-bottom: 15px; border-radius: 8px; background: #f8f9fa;';
+                emailDiv.innerHTML = `
+                    <div style="font-weight: 600; color: #667eea; margin-bottom: 5px;">📤 From: ${email.from}</div>
+                    <div style="font-size: 18px; font-weight: 600; color: #333; margin-bottom: 8px;">📋 Subject: ${email.subject}</div>
+                    <div style="color: #666; font-size: 14px; margin-bottom: 10px;">📅 Date: ${formatDate(email.date)}</div>
+                    <div style="color: #555; line-height: 1.5;">📄 Preview: ${email.preview}</div>
+                `;
+                emailsDiv.appendChild(emailDiv);
+            });
+        }
+        
+        function formatDate(dateString) {
+            try {
+                const date = new Date(dateString);
+                return date.toLocaleString();
+            } catch (e) {
+                return dateString;
+            }
+        }
+    </script>
+</body>
+</html>
