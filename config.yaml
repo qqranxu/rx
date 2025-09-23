@@ -1,132 +1,5168 @@
-# Clash Meta 配置文件
-# 新加坡阿里云节点配置
 mixed-port: 7890
-allow-lan: true
+allow-lan: false
 mode: rule
-log-level: info
+log-level: warning
 external-controller: 127.0.0.1:9090
-unified-delay: true
-global-client-fingerprint: chrome
-
 dns:
   enable: true
-  listen: :53
-  ipv6: true
+  listen: 127.0.0.1:9053
   enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  default-nameserver: 
-    - 223.5.5.5
-    - 8.8.8.8
   nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://1.1.1.1/dns-query
-  fallback:
-    - https://1.0.0.1/dns-query
-    - tls://1.1.1.1
-
-# 代理节点配置
+  - 223.5.5.5
+  - 8.8.8.8
 proxies:
-  # 香港节点 - 阿里云
-  - name: "HK-Alibaba_Cloud"
-    type: vless
-    server: 8.218.245.137
-    port: 58546
-    uuid: ce9dd965-aeb6-4e79-8305-a8ebc22c5b73
-    network: tcp
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: chrome
-    servername: www.apple.com
-    reality-opts:
-      public-key: 2PWxkzwUdfAz_QjH693GaJDX4Az6GF5Zt1wK4K_wdxI
-      short-id: feab74f8cd109a5d
-
-  # 香港节点 - x-ui
-  - name: "HK-x-ui"
-    type: vless
-    server: 8.218.245.137
-    port: 37686
-    uuid: b4fdcc63-c5d2-48ed-b9c1-42bc1c68f582
-    network: tcp
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: chrome
-    servername: www.yahoo.com
-    reality-opts:
-      public-key: Nl5Uq0Bb6ZjZr3o1oFpJZxTWshQg45VxnRVGfwEW60g
-      short-id: 3fc52027
-
-# 代理组配置
+- name: 🇭🇰 香港 01丨1x HK
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12022
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇭🇰 香港 02丨1x HK
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12023
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇭🇰 香港 03丨1x HK
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12024
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇭🇰 香港家宽 01丨1x HK
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12729
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇭🇰 香港家宽 02丨1x HK
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 13105
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇭🇰 香港家宽 03丨1x HK
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 13115
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇭🇰 香港游戏丨2x HK
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12312
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇴 澳门家宽 01丨5x MO
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 19527
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇴 澳门家宽 02丨5x MO
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20032
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇴 澳门家宽 03丨5x MO
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20063
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇼 台湾 01丨1x TW
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12304
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇼 台湾 02丨1x TW
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12305
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇼 台湾 03丨1x TW
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12306
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇼 台湾家宽 01丨3x TW
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20036
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇼 台湾家宽 02丨3x TW
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20037
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇼 台湾家宽 03丨3x TW
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20038
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇬 新加坡 01丨1x SG
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12000
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇬 新加坡 02丨1x SG
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12002
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇬 新加坡 03丨1x SG
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12003
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇬 新加坡家宽 01丨3x SG
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12726
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇬 新加坡家宽 02丨3x SG
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 13116
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇬 新加坡家宽 03丨3x SG
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 13132
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇬 新加坡家宽 04丨3x SG
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20039
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇾 马来西亚家宽 01丨1x MY
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12727
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇾 马来西亚家宽 02丨1x MY
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 13182
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇻 马尔代夫丨3x MV
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20066
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇰🇭 柬埔寨丨3x KH
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12701
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇭 泰国 01丨3x TH
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20054
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇭 泰国 02丨3x TH
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20059
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇲 缅甸丨10x MM
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 13137
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇱🇦 老挝丨5x LA
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 13138
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇻🇳 越南家宽 01丨3x VN
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12700
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇻🇳 越南家宽 02丨3x VN
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20153
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇯🇵 日本 01丨1x JP
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 12011
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇯🇵 日本 02丨1x JP
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 12010
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇯🇵 日本 03丨1x JP
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 12012
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇯🇵 日本 04丨3x JP
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13235
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇯🇵 日本 05丨3x JP
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13269
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇯🇵 日本家宽 01丨3x JP
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13101
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇯🇵 日本家宽 02丨3x JP
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13221
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇯🇵 日本家宽 03丨3x JP
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13240
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇯🇵 日本家宽 04丨3x JP
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13241
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇯🇵 日本家宽 05丨3x JP
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13242
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇯🇵 日本家宽 06丨3x JP
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13272
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇯🇵 日本家宽 07丨3x JP
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13273
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇯🇵 日本游戏丨2x JP
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13024
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇯🇵 日本-5G网络丨10x JP
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13282
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇯🇵 日本-星链丨20x JP
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13278
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇰🇷 韩国家宽 01丨5x KR
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 50017
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇰🇷 韩国家宽 02丨5x KR
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 50016
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇰🇷 韩国家宽 03丨5x KR
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 50015
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇹 不丹丨3x BT
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20072
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇳 文莱丨5x BN
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20040
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇺 关岛丨3x GU
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20115
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇵 北马里亚纳群岛丨3x MP
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20127
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇫🇯 斐济丨3x FJ
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20171
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇫🇯 斐济住宅丨10x FJ
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 13185
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇰 库克群岛丨3x CK
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20158
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇵🇭 菲律宾丨2x PH
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12406
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇵🇭 菲律宾住宅丨10x PH
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20057
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇮🇩 印尼-棉兰丨1x ID
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12300
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇮🇩 印尼-雅加达丨1x ID
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12301
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇮🇳 印度丨1x IN
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12302
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇳 蒙古丨2x MN
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12328
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇯🇴 约旦丨2x JO
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12708
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇾🇪 也门丨3x YE
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20052
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇮🇷 伊朗丨5x IR
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12707
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇭 巴林丨5x BH
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20056
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇴🇲 阿曼丨3x OM
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 13135
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇮🇱 以色列丨2x IL
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13147
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇵🇸 巴勒斯坦丨3x PS
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13158
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇷 土耳其丨1x TR
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12603
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇳🇵 尼泊尔丨1x NP
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12720
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇱 东帝汶丨3x TL
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20030
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇩 孟加拉丨2x BD
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12724
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇱🇧 黎巴嫩丨5x LB
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13123
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇮🇶 伊拉克丨5x IQ
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13124
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇾 叙利亚丨5x SY
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13126
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇦🇫 阿富汗丨3x AF
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20078
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇶🇦 卡塔尔丨3x QA
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 13181
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇰🇼 科威特丨5x KW
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13170
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇦🇪 阿联酋丨2x AE
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13174
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇦🇪 阿联酋住宅丨5x AE
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20173
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇦🇿 阿塞拜疆丨2x AZ
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12606
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇦🇲 亚美尼亚丨2x AM
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12737
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇪 格鲁吉亚丨1x GE
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13178
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇵🇰 巴基斯坦丨5x PK
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12605
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇱🇰 斯里兰卡丨10x LK
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20043
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇦 沙特阿拉伯 01丨3x SA
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13175
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇦 沙特阿拉伯 02丨3x SA
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20044
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇲 土库曼斯坦丨3x TM
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20051
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇰🇿 哈萨克斯坦丨2x KZ
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12602
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇯 塔吉克斯坦丨3x TJ
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13192
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇰🇬 吉尔吉斯斯坦丨1x KG
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13120
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇿 乌兹别克斯坦丨1x UZ
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20025
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇴 汤加丨3x TO
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20086
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇦🇺 澳大利亚-悉尼丨2x AU
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12324
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇦🇺 澳大利亚-墨尔本丨2x AU
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12401
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇳🇨 新喀里多尼亚丨3x NC
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20132
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇳🇿 新西兰丨2x NZ
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 12326
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇳🇿 新西兰家宽丨3x NZ
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20023
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇳🇷 瑙鲁丨3x NR
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20134
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇳🇺 纽埃丨3x NU
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20135
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇵🇼 帕劳丨3x PW
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20137
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇼🇸 萨摩亚丨3x WS
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20114
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇦🇸 美属萨摩亚丨3x AS
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20176
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇰 托克劳丨3x TK
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20145
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇰🇮 基里巴斯丨3x KI
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20121
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇻🇺 瓦努阿图丨3x VU
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20149
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇳🇫 诺福克岛丨3x NF
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20162
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇧 所罗门群岛丨3x SB
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20053
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇭 马绍尔群岛丨3x MH
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20126
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇫🇲 密克罗尼西亚丨3x FM
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20160
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇵🇫 法属波利尼西亚丨3x PF
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20136
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇵🇬 巴布亚新几内亚丨3x PG
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20087
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇼🇫 瓦利斯和富图纳丨3x WF
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20150
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇫🇷 法国 01丨1x FR
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12621
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇫🇷 法国 02丨1x FR
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13191
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇫🇷 法国住宅丨10x FR
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13151
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇧 英国丨1x GB
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12710
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇧 英国家宽 01丨5x GB
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13177
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇧 英国家宽 02丨5x GB
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13152
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇧 英国家宽 03丨3x GB
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13186
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇧 英国家宽 04丨5x GB
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13187
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇮🇲 马恩岛丨3x IM
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20167
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇬 根西岛丨3x GG
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20117
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇯🇪 泽西岛丨3x JE
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20120
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇩🇪 德国丨1x DE
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12619
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇩🇪 德国住宅丨5x DE
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13190
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇩🇰 丹麦丨1x DK
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12608
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇳🇴 挪威丨1x NO
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12610
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇪 瑞典丨1x SE
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12611
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇫🇮 芬兰丨1x FI
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12609
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇫🇮 芬兰家宽丨3x FI
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13179
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇮🇸 冰岛丨2x IS
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12607
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇭 瑞士丨2x CH
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12630
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇿 捷克丨1x CZ
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12613
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇷 希腊丨2x GR
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12615
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇳🇱 荷兰丨1x NL
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12622
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇵🇱 波兰丨1x PL
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12261
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇪 黑山丨3x ME
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20079
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇷🇺 俄罗斯丨1x RU
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13122
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇦 乌克兰丨2x UA
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12614
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇭🇺 匈牙利丨1x HU
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12631
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇱🇺 卢森堡丨2x LU
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12629
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇦🇹 奥地利丨2x AT
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12628
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇮🇹 意大利丨1x IT
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12616
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇮🇹 意大利家宽丨5x IT
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13149
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇻🇦 梵蒂冈丨3x VA
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20075
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇪 比利时丨1x BE
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12618
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇮🇪 爱尔兰丨2x IE
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12617
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇱🇹 立陶宛丨1x LT
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12652
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇪🇸 西班牙丨1x ES
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12625
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇵🇹 葡萄牙丨1x PT
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12624
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇦🇩 安道尔丨3x AD
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12738
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇹 马耳他丨3x MT
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12743
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇨 摩纳哥丨3x MC
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20088
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇬 保加利亚丨1x BG
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12634
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇭🇷 克罗地亚丨2x HR
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12646
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇰 北马其顿丨2x MK
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12645
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇷🇸 塞尔维亚住宅丨3x RS
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12647
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇾 塞浦路斯丨1x CY
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12654
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇱🇻 拉脱维亚丨1x LV
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12649
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇩 摩尔多瓦丨2x MD
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12651
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇰 斯洛伐克丨1x SK
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12650
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇪🇪 爱沙尼亚丨1x EE
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12635
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇾 白俄罗斯丨3x BY
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12633
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇷🇴 罗马尼亚丨1x RO
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12641
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇮 直布罗陀丨3x GI
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20080
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇲 圣马力诺丨3x SM
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20073
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇫🇴 法罗群岛丨3x FO
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20076
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇦🇽 奥兰群岛丨3x AX
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20089
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇮 斯洛文尼亚丨2x SI
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12653
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇦🇱 阿尔巴尼亚丨1x AL
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12642
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇦 波黑共和国丨2x BA
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12643
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇱🇮 列支敦士登丨3x LI
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20165
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇷🇪 法属留尼汪丨2x RE
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13176
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-费城丨1x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13110
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-纽约 01丨1x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13006
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-纽约 02丨3x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13284
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-洛杉矶 01丨1x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13007
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-洛杉矶 02丨1x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13010
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-洛杉矶 03丨1x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 12706
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-洛杉矶 04丨1x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13277
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-盐湖城丨1x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13271
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-圣何塞丨5x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13107
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-迈阿密丨1x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13109
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-西雅图丨1x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13111
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-檀香山丨3x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13108
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-旧金山丨1x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13113
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-凤凰城丨1x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13287
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-达拉斯丨1x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13267
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-芝加哥丨1x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13253
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-夏洛特丨1x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13257
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-斯波坎丨1x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13266
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-阿什本丨3x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13285
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-巴尔的摩丨3x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13288
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-拉斯维加斯丨1x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13268
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-家宽 01丨5x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13114
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-家宽 02丨5x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13227
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-家宽 03丨5x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13228
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇸 美国-家宽 04丨5x US
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13213
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇦 加拿大-温哥华丨2x CA
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13001
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇦 加拿大-温尼伯丨1x CA
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13000
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇦 加拿大-多伦多丨1x CA
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13200
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇦 加拿大家宽 01丨3x CA
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13117
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇦 加拿大家宽 02丨3x CA
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13270
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇵🇲 圣皮埃尔和密克隆丨3x PM
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20138
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇽 墨西哥丨3x MX
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13004
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇽 墨西哥家宽丨5x MX
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13280
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇽 墨西哥星链丨20x MX
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13289
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇵🇦 巴拿马丨3x PA
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 12704
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇲 百慕大丨3x BM
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20083
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇱 格陵兰丨3x GL
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20074
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇩 格林纳达丨3x GD
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20116
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇷 哥斯达黎加丨1x CR
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 12719
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇻🇬 英属维尔京丨3x VG
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20090
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇻🇮 美属维尔京丨3x VI
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20091
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇷 巴西丨1x BR
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13103
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇱 智利丨2x CL
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13104
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇵🇪 秘鲁丨5x PE
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13016
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇺 古巴丨3x CU
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20081
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇭🇹 海地丨3x HT
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20092
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇦🇷 阿根廷 01丨2x AR
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13015
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇦🇷 阿根廷 02丨2x AR
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13211
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇾 乌拉圭丨3x UY
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 12715
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇵🇾 巴拉圭丨3x PY
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13245
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇯🇲 牙买加丨3x JM
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20093
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇷 苏里南丨3x SR
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20104
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇸 巴哈马丨3x BS
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13254
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇾 圭亚那丨3x GY
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20168
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇫 法属圭亚那丨3x GF
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13251
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇿 伯利兹丨3x BZ
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20094
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇸 蒙特塞拉特丨3x MS
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20129
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇦🇼 荷属阿鲁巴丨3x AW
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20084
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇼 荷属库拉索丨3x CW
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13115
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇽 荷属圣马丁丨3x SX
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20141
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇫 法属圣马丁丨3x MF
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20125
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇱 圣巴泰勒米丨3x BL
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20156
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇵 法属瓜德罗普丨3x GP
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20095
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇶 法属马提尼克丨3x MQ
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13279
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇦🇬 安提瓜和巴布达丨3x AG
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20082
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇰🇳 圣基茨和尼维斯丨3x KN
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20122
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇹 特立尼达和多巴哥丨3x TT
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13252
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇻🇨 圣文森特和格林纳丁斯丨3x VC
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20148
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇴 哥伦比亚丨3x CO
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13246
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇪🇨 厄瓜多尔丨3x EC
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13106
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇻🇪 委内瑞拉丨3x VE
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20155
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇴 玻利维亚丨3x BO
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20169
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇹 危地马拉丨1x GT
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13218
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇻 萨尔瓦多丨1x SV
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13281
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇵🇷 波多黎各丨3x PR
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20170
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇵🇷 波多黎各住宅丨5x PR
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13219
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇰🇾 开曼群岛丨3x KY
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20096
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇭🇳 洪都拉斯丨3x HN
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13237
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇳🇮 尼加拉瓜丨3x NI
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20163
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇩🇲 多米尼克丨3x DM
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20097
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇩🇴 多米尼加丨5x DO
+  type: ss
+  server: tq5cpgw3.epicgames.ink
+  port: 13290
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇧 巴巴多斯丨3x BB
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20067
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇱🇨 圣卢西亚丨3x LC
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20123
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇫🇰 福克兰群岛丨3x FK
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20159
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇨 特克斯和凯科斯群岛丨3x TC
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20143
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇪🇬 埃及丨3x EG
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12718
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇭 加纳丨3x GH
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13188
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇬 多哥丨3x TG
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13137
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇿🇦 南非 01丨1x ZA
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12036
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇿🇦 南非 02丨1x ZA
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13189
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇯 贝宁丨3x BJ
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20099
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇩 苏丹丨3x SD
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20077
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇱 马里丨3x ML
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20071
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇬 刚果（布）丨3x CG
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20100
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇩 刚果（金）丨3x CD
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20166
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇦 加蓬丨3x GA
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20113
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇩 乍得丨3x TD
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20144
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇦 摩洛哥丨3x MA
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13193
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇳 突尼斯丨2x TN
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12703
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇱🇾 利比亚丨3x LY
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20101
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇰🇪 肯尼亚丨1x KE
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12716
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇷🇼 卢旺达丨2x RW
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13154
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇻 佛得角丨3x CV
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20102
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇦🇴 安哥拉丨3x AO
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13145
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇲 喀麦隆丨3x CM
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20103
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇮 布隆迪丨3x BI
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20105
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇴 索马里丨3x SO
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20069
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇩🇯 吉布提丨3x DJ
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20110
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇲 冈比亚丨3x GM
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20118
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇳 几内亚丨3x GN
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20119
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇱🇸 莱索托丨3x LS
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20124
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇼 马拉维丨3x MW
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20130
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇳🇪 尼日尔丨3x NE
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20133
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇺🇬 乌干达丨3x UG
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20147
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇾🇹 马约特丨3x YT
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20151
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇿🇲 赞比亚丨3x ZM
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20152
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇸 南苏丹丨3x SS
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20172
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇨 塞舌尔丨3x SC
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20174
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇰🇲 科摩罗丨3x KM
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20175
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇳🇬 尼日利亚丨2x NG
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 12648
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇳🇬 尼日利亚住宅丨5x NG
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13184
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇿 莫桑比克丨3x MZ
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20161
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇺 毛里求斯丨2x MU
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13118
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇮 科特迪瓦丨3x CI
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20106
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇹🇿 坦桑尼亚丨5x TZ
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13171
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇿🇼 津巴布韦丨3x ZW
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20068
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇳 塞内加尔丨3x SN
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13194
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇼 博茨瓦纳丨3x BW
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20109
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇳🇦 纳米比亚丨3x NA
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20131
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇱 塞拉利昂丨3x SL
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20139
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇿 斯威士兰丨3x SZ
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20142
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇱🇷 利比里亚丨3x LR
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20146
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇩🇿 阿尔及利亚丨3x DZ
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13157
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇬 马达加斯加丨3x MG
+  type: ss
+  server: libid0og.epicgames.ink
+  port: 13173
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇶 赤道几内亚丨3x GQ
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20070
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇧🇫 布基纳法索丨3x BF
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20108
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇪🇷 厄立特里亚丨3x ER
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20111
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇪🇹 埃塞俄比亚丨3x ET
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20112
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇲🇷 毛里塔尼亚丨3x MR
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20128
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇫 中非共和国丨3x CF
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20157
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇬🇼 几内亚比绍丨3x GW
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20179
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇸🇹 圣多美和普林西比丨3x ST
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20140
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇦🇶 南极洲丨3x AQ
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20031
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+- name: 🇨🇳 中国大陆丨3x CN
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20180
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
+listeners:
+- name: mixed0
+  type: mixed
+  port: 42000
+  proxy: 🇭🇰 香港 01丨1x HK
+- name: mixed1
+  type: mixed
+  port: 42001
+  proxy: 🇭🇰 香港 02丨1x HK
+- name: mixed2
+  type: mixed
+  port: 42002
+  proxy: 🇭🇰 香港 03丨1x HK
+- name: mixed3
+  type: mixed
+  port: 42003
+  proxy: 🇭🇰 香港家宽 01丨1x HK
+- name: mixed4
+  type: mixed
+  port: 42004
+  proxy: 🇭🇰 香港家宽 02丨1x HK
+- name: mixed5
+  type: mixed
+  port: 42005
+  proxy: 🇭🇰 香港家宽 03丨1x HK
+- name: mixed6
+  type: mixed
+  port: 42006
+  proxy: 🇭🇰 香港游戏丨2x HK
+- name: mixed7
+  type: mixed
+  port: 42007
+  proxy: 🇲🇴 澳门家宽 01丨5x MO
+- name: mixed8
+  type: mixed
+  port: 42008
+  proxy: 🇲🇴 澳门家宽 02丨5x MO
+- name: mixed9
+  type: mixed
+  port: 42009
+  proxy: 🇲🇴 澳门家宽 03丨5x MO
+- name: mixed10
+  type: mixed
+  port: 42010
+  proxy: 🇹🇼 台湾 01丨1x TW
+- name: mixed11
+  type: mixed
+  port: 42011
+  proxy: 🇹🇼 台湾 02丨1x TW
+- name: mixed12
+  type: mixed
+  port: 42012
+  proxy: 🇹🇼 台湾 03丨1x TW
+- name: mixed13
+  type: mixed
+  port: 42013
+  proxy: 🇹🇼 台湾家宽 01丨3x TW
+- name: mixed14
+  type: mixed
+  port: 42014
+  proxy: 🇹🇼 台湾家宽 02丨3x TW
+- name: mixed15
+  type: mixed
+  port: 42015
+  proxy: 🇹🇼 台湾家宽 03丨3x TW
+- name: mixed16
+  type: mixed
+  port: 42016
+  proxy: 🇸🇬 新加坡 01丨1x SG
+- name: mixed17
+  type: mixed
+  port: 42017
+  proxy: 🇸🇬 新加坡 02丨1x SG
+- name: mixed18
+  type: mixed
+  port: 42018
+  proxy: 🇸🇬 新加坡 03丨1x SG
+- name: mixed19
+  type: mixed
+  port: 42019
+  proxy: 🇸🇬 新加坡家宽 01丨3x SG
+- name: mixed20
+  type: mixed
+  port: 42020
+  proxy: 🇸🇬 新加坡家宽 02丨3x SG
+- name: mixed21
+  type: mixed
+  port: 42021
+  proxy: 🇸🇬 新加坡家宽 03丨3x SG
+- name: mixed22
+  type: mixed
+  port: 42022
+  proxy: 🇸🇬 新加坡家宽 04丨3x SG
+- name: mixed23
+  type: mixed
+  port: 42023
+  proxy: 🇲🇾 马来西亚家宽 01丨1x MY
+- name: mixed24
+  type: mixed
+  port: 42024
+  proxy: 🇲🇾 马来西亚家宽 02丨1x MY
+- name: mixed25
+  type: mixed
+  port: 42025
+  proxy: 🇲🇻 马尔代夫丨3x MV
+- name: mixed26
+  type: mixed
+  port: 42026
+  proxy: 🇰🇭 柬埔寨丨3x KH
+- name: mixed27
+  type: mixed
+  port: 42027
+  proxy: 🇹🇭 泰国 01丨3x TH
+- name: mixed28
+  type: mixed
+  port: 42028
+  proxy: 🇹🇭 泰国 02丨3x TH
+- name: mixed29
+  type: mixed
+  port: 42029
+  proxy: 🇲🇲 缅甸丨10x MM
+- name: mixed30
+  type: mixed
+  port: 42030
+  proxy: 🇱🇦 老挝丨5x LA
+- name: mixed31
+  type: mixed
+  port: 42031
+  proxy: 🇻🇳 越南家宽 01丨3x VN
+- name: mixed32
+  type: mixed
+  port: 42032
+  proxy: 🇻🇳 越南家宽 02丨3x VN
+- name: mixed33
+  type: mixed
+  port: 42033
+  proxy: 🇯🇵 日本 01丨1x JP
+- name: mixed34
+  type: mixed
+  port: 42034
+  proxy: 🇯🇵 日本 02丨1x JP
+- name: mixed35
+  type: mixed
+  port: 42035
+  proxy: 🇯🇵 日本 03丨1x JP
+- name: mixed36
+  type: mixed
+  port: 42036
+  proxy: 🇯🇵 日本 04丨3x JP
+- name: mixed37
+  type: mixed
+  port: 42037
+  proxy: 🇯🇵 日本 05丨3x JP
+- name: mixed38
+  type: mixed
+  port: 42038
+  proxy: 🇯🇵 日本家宽 01丨3x JP
+- name: mixed39
+  type: mixed
+  port: 42039
+  proxy: 🇯🇵 日本家宽 02丨3x JP
+- name: mixed40
+  type: mixed
+  port: 42040
+  proxy: 🇯🇵 日本家宽 03丨3x JP
+- name: mixed41
+  type: mixed
+  port: 42041
+  proxy: 🇯🇵 日本家宽 04丨3x JP
+- name: mixed42
+  type: mixed
+  port: 42042
+  proxy: 🇯🇵 日本家宽 05丨3x JP
+- name: mixed43
+  type: mixed
+  port: 42043
+  proxy: 🇯🇵 日本家宽 06丨3x JP
+- name: mixed44
+  type: mixed
+  port: 42044
+  proxy: 🇯🇵 日本家宽 07丨3x JP
+- name: mixed45
+  type: mixed
+  port: 42045
+  proxy: 🇯🇵 日本游戏丨2x JP
+- name: mixed46
+  type: mixed
+  port: 42046
+  proxy: 🇯🇵 日本-5G网络丨10x JP
+- name: mixed47
+  type: mixed
+  port: 42047
+  proxy: 🇯🇵 日本-星链丨20x JP
+- name: mixed48
+  type: mixed
+  port: 42048
+  proxy: 🇰🇷 韩国家宽 01丨5x KR
+- name: mixed49
+  type: mixed
+  port: 42049
+  proxy: 🇰🇷 韩国家宽 02丨5x KR
+- name: mixed50
+  type: mixed
+  port: 42050
+  proxy: 🇰🇷 韩国家宽 03丨5x KR
+- name: mixed51
+  type: mixed
+  port: 42051
+  proxy: 🇧🇹 不丹丨3x BT
+- name: mixed52
+  type: mixed
+  port: 42052
+  proxy: 🇧🇳 文莱丨5x BN
+- name: mixed53
+  type: mixed
+  port: 42053
+  proxy: 🇬🇺 关岛丨3x GU
+- name: mixed54
+  type: mixed
+  port: 42054
+  proxy: 🇲🇵 北马里亚纳群岛丨3x MP
+- name: mixed55
+  type: mixed
+  port: 42055
+  proxy: 🇫🇯 斐济丨3x FJ
+- name: mixed56
+  type: mixed
+  port: 42056
+  proxy: 🇫🇯 斐济住宅丨10x FJ
+- name: mixed57
+  type: mixed
+  port: 42057
+  proxy: 🇨🇰 库克群岛丨3x CK
+- name: mixed58
+  type: mixed
+  port: 42058
+  proxy: 🇵🇭 菲律宾丨2x PH
+- name: mixed59
+  type: mixed
+  port: 42059
+  proxy: 🇵🇭 菲律宾住宅丨10x PH
+- name: mixed60
+  type: mixed
+  port: 42060
+  proxy: 🇮🇩 印尼-棉兰丨1x ID
+- name: mixed61
+  type: mixed
+  port: 42061
+  proxy: 🇮🇩 印尼-雅加达丨1x ID
+- name: mixed62
+  type: mixed
+  port: 42062
+  proxy: 🇮🇳 印度丨1x IN
+- name: mixed63
+  type: mixed
+  port: 42063
+  proxy: 🇲🇳 蒙古丨2x MN
+- name: mixed64
+  type: mixed
+  port: 42064
+  proxy: 🇯🇴 约旦丨2x JO
+- name: mixed65
+  type: mixed
+  port: 42065
+  proxy: 🇾🇪 也门丨3x YE
+- name: mixed66
+  type: mixed
+  port: 42066
+  proxy: 🇮🇷 伊朗丨5x IR
+- name: mixed67
+  type: mixed
+  port: 42067
+  proxy: 🇧🇭 巴林丨5x BH
+- name: mixed68
+  type: mixed
+  port: 42068
+  proxy: 🇴🇲 阿曼丨3x OM
+- name: mixed69
+  type: mixed
+  port: 42069
+  proxy: 🇮🇱 以色列丨2x IL
+- name: mixed70
+  type: mixed
+  port: 42070
+  proxy: 🇵🇸 巴勒斯坦丨3x PS
+- name: mixed71
+  type: mixed
+  port: 42071
+  proxy: 🇹🇷 土耳其丨1x TR
+- name: mixed72
+  type: mixed
+  port: 42072
+  proxy: 🇳🇵 尼泊尔丨1x NP
+- name: mixed73
+  type: mixed
+  port: 42073
+  proxy: 🇹🇱 东帝汶丨3x TL
+- name: mixed74
+  type: mixed
+  port: 42074
+  proxy: 🇧🇩 孟加拉丨2x BD
+- name: mixed75
+  type: mixed
+  port: 42075
+  proxy: 🇱🇧 黎巴嫩丨5x LB
+- name: mixed76
+  type: mixed
+  port: 42076
+  proxy: 🇮🇶 伊拉克丨5x IQ
+- name: mixed77
+  type: mixed
+  port: 42077
+  proxy: 🇸🇾 叙利亚丨5x SY
+- name: mixed78
+  type: mixed
+  port: 42078
+  proxy: 🇦🇫 阿富汗丨3x AF
+- name: mixed79
+  type: mixed
+  port: 42079
+  proxy: 🇶🇦 卡塔尔丨3x QA
+- name: mixed80
+  type: mixed
+  port: 42080
+  proxy: 🇰🇼 科威特丨5x KW
+- name: mixed81
+  type: mixed
+  port: 42081
+  proxy: 🇦🇪 阿联酋丨2x AE
+- name: mixed82
+  type: mixed
+  port: 42082
+  proxy: 🇦🇪 阿联酋住宅丨5x AE
+- name: mixed83
+  type: mixed
+  port: 42083
+  proxy: 🇦🇿 阿塞拜疆丨2x AZ
+- name: mixed84
+  type: mixed
+  port: 42084
+  proxy: 🇦🇲 亚美尼亚丨2x AM
+- name: mixed85
+  type: mixed
+  port: 42085
+  proxy: 🇬🇪 格鲁吉亚丨1x GE
+- name: mixed86
+  type: mixed
+  port: 42086
+  proxy: 🇵🇰 巴基斯坦丨5x PK
+- name: mixed87
+  type: mixed
+  port: 42087
+  proxy: 🇱🇰 斯里兰卡丨10x LK
+- name: mixed88
+  type: mixed
+  port: 42088
+  proxy: 🇸🇦 沙特阿拉伯 01丨3x SA
+- name: mixed89
+  type: mixed
+  port: 42089
+  proxy: 🇸🇦 沙特阿拉伯 02丨3x SA
+- name: mixed90
+  type: mixed
+  port: 42090
+  proxy: 🇹🇲 土库曼斯坦丨3x TM
+- name: mixed91
+  type: mixed
+  port: 42091
+  proxy: 🇰🇿 哈萨克斯坦丨2x KZ
+- name: mixed92
+  type: mixed
+  port: 42092
+  proxy: 🇹🇯 塔吉克斯坦丨3x TJ
+- name: mixed93
+  type: mixed
+  port: 42093
+  proxy: 🇰🇬 吉尔吉斯斯坦丨1x KG
+- name: mixed94
+  type: mixed
+  port: 42094
+  proxy: 🇺🇿 乌兹别克斯坦丨1x UZ
+- name: mixed95
+  type: mixed
+  port: 42095
+  proxy: 🇹🇴 汤加丨3x TO
+- name: mixed96
+  type: mixed
+  port: 42096
+  proxy: 🇦🇺 澳大利亚-悉尼丨2x AU
+- name: mixed97
+  type: mixed
+  port: 42097
+  proxy: 🇦🇺 澳大利亚-墨尔本丨2x AU
+- name: mixed98
+  type: mixed
+  port: 42098
+  proxy: 🇳🇨 新喀里多尼亚丨3x NC
+- name: mixed99
+  type: mixed
+  port: 42099
+  proxy: 🇳🇿 新西兰丨2x NZ
+- name: mixed100
+  type: mixed
+  port: 42100
+  proxy: 🇳🇿 新西兰家宽丨3x NZ
+- name: mixed101
+  type: mixed
+  port: 42101
+  proxy: 🇳🇷 瑙鲁丨3x NR
+- name: mixed102
+  type: mixed
+  port: 42102
+  proxy: 🇳🇺 纽埃丨3x NU
+- name: mixed103
+  type: mixed
+  port: 42103
+  proxy: 🇵🇼 帕劳丨3x PW
+- name: mixed104
+  type: mixed
+  port: 42104
+  proxy: 🇼🇸 萨摩亚丨3x WS
+- name: mixed105
+  type: mixed
+  port: 42105
+  proxy: 🇦🇸 美属萨摩亚丨3x AS
+- name: mixed106
+  type: mixed
+  port: 42106
+  proxy: 🇹🇰 托克劳丨3x TK
+- name: mixed107
+  type: mixed
+  port: 42107
+  proxy: 🇰🇮 基里巴斯丨3x KI
+- name: mixed108
+  type: mixed
+  port: 42108
+  proxy: 🇻🇺 瓦努阿图丨3x VU
+- name: mixed109
+  type: mixed
+  port: 42109
+  proxy: 🇳🇫 诺福克岛丨3x NF
+- name: mixed110
+  type: mixed
+  port: 42110
+  proxy: 🇸🇧 所罗门群岛丨3x SB
+- name: mixed111
+  type: mixed
+  port: 42111
+  proxy: 🇲🇭 马绍尔群岛丨3x MH
+- name: mixed112
+  type: mixed
+  port: 42112
+  proxy: 🇫🇲 密克罗尼西亚丨3x FM
+- name: mixed113
+  type: mixed
+  port: 42113
+  proxy: 🇵🇫 法属波利尼西亚丨3x PF
+- name: mixed114
+  type: mixed
+  port: 42114
+  proxy: 🇵🇬 巴布亚新几内亚丨3x PG
+- name: mixed115
+  type: mixed
+  port: 42115
+  proxy: 🇼🇫 瓦利斯和富图纳丨3x WF
+- name: mixed116
+  type: mixed
+  port: 42116
+  proxy: 🇫🇷 法国 01丨1x FR
+- name: mixed117
+  type: mixed
+  port: 42117
+  proxy: 🇫🇷 法国 02丨1x FR
+- name: mixed118
+  type: mixed
+  port: 42118
+  proxy: 🇫🇷 法国住宅丨10x FR
+- name: mixed119
+  type: mixed
+  port: 42119
+  proxy: 🇬🇧 英国丨1x GB
+- name: mixed120
+  type: mixed
+  port: 42120
+  proxy: 🇬🇧 英国家宽 01丨5x GB
+- name: mixed121
+  type: mixed
+  port: 42121
+  proxy: 🇬🇧 英国家宽 02丨5x GB
+- name: mixed122
+  type: mixed
+  port: 42122
+  proxy: 🇬🇧 英国家宽 03丨3x GB
+- name: mixed123
+  type: mixed
+  port: 42123
+  proxy: 🇬🇧 英国家宽 04丨5x GB
+- name: mixed124
+  type: mixed
+  port: 42124
+  proxy: 🇮🇲 马恩岛丨3x IM
+- name: mixed125
+  type: mixed
+  port: 42125
+  proxy: 🇬🇬 根西岛丨3x GG
+- name: mixed126
+  type: mixed
+  port: 42126
+  proxy: 🇯🇪 泽西岛丨3x JE
+- name: mixed127
+  type: mixed
+  port: 42127
+  proxy: 🇩🇪 德国丨1x DE
+- name: mixed128
+  type: mixed
+  port: 42128
+  proxy: 🇩🇪 德国住宅丨5x DE
+- name: mixed129
+  type: mixed
+  port: 42129
+  proxy: 🇩🇰 丹麦丨1x DK
+- name: mixed130
+  type: mixed
+  port: 42130
+  proxy: 🇳🇴 挪威丨1x NO
+- name: mixed131
+  type: mixed
+  port: 42131
+  proxy: 🇸🇪 瑞典丨1x SE
+- name: mixed132
+  type: mixed
+  port: 42132
+  proxy: 🇫🇮 芬兰丨1x FI
+- name: mixed133
+  type: mixed
+  port: 42133
+  proxy: 🇫🇮 芬兰家宽丨3x FI
+- name: mixed134
+  type: mixed
+  port: 42134
+  proxy: 🇮🇸 冰岛丨2x IS
+- name: mixed135
+  type: mixed
+  port: 42135
+  proxy: 🇨🇭 瑞士丨2x CH
+- name: mixed136
+  type: mixed
+  port: 42136
+  proxy: 🇨🇿 捷克丨1x CZ
+- name: mixed137
+  type: mixed
+  port: 42137
+  proxy: 🇬🇷 希腊丨2x GR
+- name: mixed138
+  type: mixed
+  port: 42138
+  proxy: 🇳🇱 荷兰丨1x NL
+- name: mixed139
+  type: mixed
+  port: 42139
+  proxy: 🇵🇱 波兰丨1x PL
+- name: mixed140
+  type: mixed
+  port: 42140
+  proxy: 🇲🇪 黑山丨3x ME
+- name: mixed141
+  type: mixed
+  port: 42141
+  proxy: 🇷🇺 俄罗斯丨1x RU
+- name: mixed142
+  type: mixed
+  port: 42142
+  proxy: 🇺🇦 乌克兰丨2x UA
+- name: mixed143
+  type: mixed
+  port: 42143
+  proxy: 🇭🇺 匈牙利丨1x HU
+- name: mixed144
+  type: mixed
+  port: 42144
+  proxy: 🇱🇺 卢森堡丨2x LU
+- name: mixed145
+  type: mixed
+  port: 42145
+  proxy: 🇦🇹 奥地利丨2x AT
+- name: mixed146
+  type: mixed
+  port: 42146
+  proxy: 🇮🇹 意大利丨1x IT
+- name: mixed147
+  type: mixed
+  port: 42147
+  proxy: 🇮🇹 意大利家宽丨5x IT
+- name: mixed148
+  type: mixed
+  port: 42148
+  proxy: 🇻🇦 梵蒂冈丨3x VA
+- name: mixed149
+  type: mixed
+  port: 42149
+  proxy: 🇧🇪 比利时丨1x BE
+- name: mixed150
+  type: mixed
+  port: 42150
+  proxy: 🇮🇪 爱尔兰丨2x IE
+- name: mixed151
+  type: mixed
+  port: 42151
+  proxy: 🇱🇹 立陶宛丨1x LT
+- name: mixed152
+  type: mixed
+  port: 42152
+  proxy: 🇪🇸 西班牙丨1x ES
+- name: mixed153
+  type: mixed
+  port: 42153
+  proxy: 🇵🇹 葡萄牙丨1x PT
+- name: mixed154
+  type: mixed
+  port: 42154
+  proxy: 🇦🇩 安道尔丨3x AD
+- name: mixed155
+  type: mixed
+  port: 42155
+  proxy: 🇲🇹 马耳他丨3x MT
+- name: mixed156
+  type: mixed
+  port: 42156
+  proxy: 🇲🇨 摩纳哥丨3x MC
+- name: mixed157
+  type: mixed
+  port: 42157
+  proxy: 🇧🇬 保加利亚丨1x BG
+- name: mixed158
+  type: mixed
+  port: 42158
+  proxy: 🇭🇷 克罗地亚丨2x HR
+- name: mixed159
+  type: mixed
+  port: 42159
+  proxy: 🇲🇰 北马其顿丨2x MK
+- name: mixed160
+  type: mixed
+  port: 42160
+  proxy: 🇷🇸 塞尔维亚住宅丨3x RS
+- name: mixed161
+  type: mixed
+  port: 42161
+  proxy: 🇨🇾 塞浦路斯丨1x CY
+- name: mixed162
+  type: mixed
+  port: 42162
+  proxy: 🇱🇻 拉脱维亚丨1x LV
+- name: mixed163
+  type: mixed
+  port: 42163
+  proxy: 🇲🇩 摩尔多瓦丨2x MD
+- name: mixed164
+  type: mixed
+  port: 42164
+  proxy: 🇸🇰 斯洛伐克丨1x SK
+- name: mixed165
+  type: mixed
+  port: 42165
+  proxy: 🇪🇪 爱沙尼亚丨1x EE
+- name: mixed166
+  type: mixed
+  port: 42166
+  proxy: 🇧🇾 白俄罗斯丨3x BY
+- name: mixed167
+  type: mixed
+  port: 42167
+  proxy: 🇷🇴 罗马尼亚丨1x RO
+- name: mixed168
+  type: mixed
+  port: 42168
+  proxy: 🇬🇮 直布罗陀丨3x GI
+- name: mixed169
+  type: mixed
+  port: 42169
+  proxy: 🇸🇲 圣马力诺丨3x SM
+- name: mixed170
+  type: mixed
+  port: 42170
+  proxy: 🇫🇴 法罗群岛丨3x FO
+- name: mixed171
+  type: mixed
+  port: 42171
+  proxy: 🇦🇽 奥兰群岛丨3x AX
+- name: mixed172
+  type: mixed
+  port: 42172
+  proxy: 🇸🇮 斯洛文尼亚丨2x SI
+- name: mixed173
+  type: mixed
+  port: 42173
+  proxy: 🇦🇱 阿尔巴尼亚丨1x AL
+- name: mixed174
+  type: mixed
+  port: 42174
+  proxy: 🇧🇦 波黑共和国丨2x BA
+- name: mixed175
+  type: mixed
+  port: 42175
+  proxy: 🇱🇮 列支敦士登丨3x LI
+- name: mixed176
+  type: mixed
+  port: 42176
+  proxy: 🇷🇪 法属留尼汪丨2x RE
+- name: mixed177
+  type: mixed
+  port: 42177
+  proxy: 🇺🇸 美国-费城丨1x US
+- name: mixed178
+  type: mixed
+  port: 42178
+  proxy: 🇺🇸 美国-纽约 01丨1x US
+- name: mixed179
+  type: mixed
+  port: 42179
+  proxy: 🇺🇸 美国-纽约 02丨3x US
+- name: mixed180
+  type: mixed
+  port: 42180
+  proxy: 🇺🇸 美国-洛杉矶 01丨1x US
+- name: mixed181
+  type: mixed
+  port: 42181
+  proxy: 🇺🇸 美国-洛杉矶 02丨1x US
+- name: mixed182
+  type: mixed
+  port: 42182
+  proxy: 🇺🇸 美国-洛杉矶 03丨1x US
+- name: mixed183
+  type: mixed
+  port: 42183
+  proxy: 🇺🇸 美国-洛杉矶 04丨1x US
+- name: mixed184
+  type: mixed
+  port: 42184
+  proxy: 🇺🇸 美国-盐湖城丨1x US
+- name: mixed185
+  type: mixed
+  port: 42185
+  proxy: 🇺🇸 美国-圣何塞丨5x US
+- name: mixed186
+  type: mixed
+  port: 42186
+  proxy: 🇺🇸 美国-迈阿密丨1x US
+- name: mixed187
+  type: mixed
+  port: 42187
+  proxy: 🇺🇸 美国-西雅图丨1x US
+- name: mixed188
+  type: mixed
+  port: 42188
+  proxy: 🇺🇸 美国-檀香山丨3x US
+- name: mixed189
+  type: mixed
+  port: 42189
+  proxy: 🇺🇸 美国-旧金山丨1x US
+- name: mixed190
+  type: mixed
+  port: 42190
+  proxy: 🇺🇸 美国-凤凰城丨1x US
+- name: mixed191
+  type: mixed
+  port: 42191
+  proxy: 🇺🇸 美国-达拉斯丨1x US
+- name: mixed192
+  type: mixed
+  port: 42192
+  proxy: 🇺🇸 美国-芝加哥丨1x US
+- name: mixed193
+  type: mixed
+  port: 42193
+  proxy: 🇺🇸 美国-夏洛特丨1x US
+- name: mixed194
+  type: mixed
+  port: 42194
+  proxy: 🇺🇸 美国-斯波坎丨1x US
+- name: mixed195
+  type: mixed
+  port: 42195
+  proxy: 🇺🇸 美国-阿什本丨3x US
+- name: mixed196
+  type: mixed
+  port: 42196
+  proxy: 🇺🇸 美国-巴尔的摩丨3x US
+- name: mixed197
+  type: mixed
+  port: 42197
+  proxy: 🇺🇸 美国-拉斯维加斯丨1x US
+- name: mixed198
+  type: mixed
+  port: 42198
+  proxy: 🇺🇸 美国-家宽 01丨5x US
+- name: mixed199
+  type: mixed
+  port: 42199
+  proxy: 🇺🇸 美国-家宽 02丨5x US
+- name: mixed200
+  type: mixed
+  port: 42200
+  proxy: 🇺🇸 美国-家宽 03丨5x US
+- name: mixed201
+  type: mixed
+  port: 42201
+  proxy: 🇺🇸 美国-家宽 04丨5x US
+- name: mixed202
+  type: mixed
+  port: 42202
+  proxy: 🇨🇦 加拿大-温哥华丨2x CA
+- name: mixed203
+  type: mixed
+  port: 42203
+  proxy: 🇨🇦 加拿大-温尼伯丨1x CA
+- name: mixed204
+  type: mixed
+  port: 42204
+  proxy: 🇨🇦 加拿大-多伦多丨1x CA
+- name: mixed205
+  type: mixed
+  port: 42205
+  proxy: 🇨🇦 加拿大家宽 01丨3x CA
+- name: mixed206
+  type: mixed
+  port: 42206
+  proxy: 🇨🇦 加拿大家宽 02丨3x CA
+- name: mixed207
+  type: mixed
+  port: 42207
+  proxy: 🇵🇲 圣皮埃尔和密克隆丨3x PM
+- name: mixed208
+  type: mixed
+  port: 42208
+  proxy: 🇲🇽 墨西哥丨3x MX
+- name: mixed209
+  type: mixed
+  port: 42209
+  proxy: 🇲🇽 墨西哥家宽丨5x MX
+- name: mixed210
+  type: mixed
+  port: 42210
+  proxy: 🇲🇽 墨西哥星链丨20x MX
+- name: mixed211
+  type: mixed
+  port: 42211
+  proxy: 🇵🇦 巴拿马丨3x PA
+- name: mixed212
+  type: mixed
+  port: 42212
+  proxy: 🇧🇲 百慕大丨3x BM
+- name: mixed213
+  type: mixed
+  port: 42213
+  proxy: 🇬🇱 格陵兰丨3x GL
+- name: mixed214
+  type: mixed
+  port: 42214
+  proxy: 🇬🇩 格林纳达丨3x GD
+- name: mixed215
+  type: mixed
+  port: 42215
+  proxy: 🇨🇷 哥斯达黎加丨1x CR
+- name: mixed216
+  type: mixed
+  port: 42216
+  proxy: 🇻🇬 英属维尔京丨3x VG
+- name: mixed217
+  type: mixed
+  port: 42217
+  proxy: 🇻🇮 美属维尔京丨3x VI
+- name: mixed218
+  type: mixed
+  port: 42218
+  proxy: 🇧🇷 巴西丨1x BR
+- name: mixed219
+  type: mixed
+  port: 42219
+  proxy: 🇨🇱 智利丨2x CL
+- name: mixed220
+  type: mixed
+  port: 42220
+  proxy: 🇵🇪 秘鲁丨5x PE
+- name: mixed221
+  type: mixed
+  port: 42221
+  proxy: 🇨🇺 古巴丨3x CU
+- name: mixed222
+  type: mixed
+  port: 42222
+  proxy: 🇭🇹 海地丨3x HT
+- name: mixed223
+  type: mixed
+  port: 42223
+  proxy: 🇦🇷 阿根廷 01丨2x AR
+- name: mixed224
+  type: mixed
+  port: 42224
+  proxy: 🇦🇷 阿根廷 02丨2x AR
+- name: mixed225
+  type: mixed
+  port: 42225
+  proxy: 🇺🇾 乌拉圭丨3x UY
+- name: mixed226
+  type: mixed
+  port: 42226
+  proxy: 🇵🇾 巴拉圭丨3x PY
+- name: mixed227
+  type: mixed
+  port: 42227
+  proxy: 🇯🇲 牙买加丨3x JM
+- name: mixed228
+  type: mixed
+  port: 42228
+  proxy: 🇸🇷 苏里南丨3x SR
+- name: mixed229
+  type: mixed
+  port: 42229
+  proxy: 🇧🇸 巴哈马丨3x BS
+- name: mixed230
+  type: mixed
+  port: 42230
+  proxy: 🇬🇾 圭亚那丨3x GY
+- name: mixed231
+  type: mixed
+  port: 42231
+  proxy: 🇬🇫 法属圭亚那丨3x GF
+- name: mixed232
+  type: mixed
+  port: 42232
+  proxy: 🇧🇿 伯利兹丨3x BZ
+- name: mixed233
+  type: mixed
+  port: 42233
+  proxy: 🇲🇸 蒙特塞拉特丨3x MS
+- name: mixed234
+  type: mixed
+  port: 42234
+  proxy: 🇦🇼 荷属阿鲁巴丨3x AW
+- name: mixed235
+  type: mixed
+  port: 42235
+  proxy: 🇨🇼 荷属库拉索丨3x CW
+- name: mixed236
+  type: mixed
+  port: 42236
+  proxy: 🇸🇽 荷属圣马丁丨3x SX
+- name: mixed237
+  type: mixed
+  port: 42237
+  proxy: 🇲🇫 法属圣马丁丨3x MF
+- name: mixed238
+  type: mixed
+  port: 42238
+  proxy: 🇧🇱 圣巴泰勒米丨3x BL
+- name: mixed239
+  type: mixed
+  port: 42239
+  proxy: 🇬🇵 法属瓜德罗普丨3x GP
+- name: mixed240
+  type: mixed
+  port: 42240
+  proxy: 🇲🇶 法属马提尼克丨3x MQ
+- name: mixed241
+  type: mixed
+  port: 42241
+  proxy: 🇦🇬 安提瓜和巴布达丨3x AG
+- name: mixed242
+  type: mixed
+  port: 42242
+  proxy: 🇰🇳 圣基茨和尼维斯丨3x KN
+- name: mixed243
+  type: mixed
+  port: 42243
+  proxy: 🇹🇹 特立尼达和多巴哥丨3x TT
+- name: mixed244
+  type: mixed
+  port: 42244
+  proxy: 🇻🇨 圣文森特和格林纳丁斯丨3x VC
+- name: mixed245
+  type: mixed
+  port: 42245
+  proxy: 🇨🇴 哥伦比亚丨3x CO
+- name: mixed246
+  type: mixed
+  port: 42246
+  proxy: 🇪🇨 厄瓜多尔丨3x EC
+- name: mixed247
+  type: mixed
+  port: 42247
+  proxy: 🇻🇪 委内瑞拉丨3x VE
+- name: mixed248
+  type: mixed
+  port: 42248
+  proxy: 🇧🇴 玻利维亚丨3x BO
+- name: mixed249
+  type: mixed
+  port: 42249
+  proxy: 🇬🇹 危地马拉丨1x GT
+- name: mixed250
+  type: mixed
+  port: 42250
+  proxy: 🇸🇻 萨尔瓦多丨1x SV
+- name: mixed251
+  type: mixed
+  port: 42251
+  proxy: 🇵🇷 波多黎各丨3x PR
+- name: mixed252
+  type: mixed
+  port: 42252
+  proxy: 🇵🇷 波多黎各住宅丨5x PR
+- name: mixed253
+  type: mixed
+  port: 42253
+  proxy: 🇰🇾 开曼群岛丨3x KY
+- name: mixed254
+  type: mixed
+  port: 42254
+  proxy: 🇭🇳 洪都拉斯丨3x HN
+- name: mixed255
+  type: mixed
+  port: 42255
+  proxy: 🇳🇮 尼加拉瓜丨3x NI
+- name: mixed256
+  type: mixed
+  port: 42256
+  proxy: 🇩🇲 多米尼克丨3x DM
+- name: mixed257
+  type: mixed
+  port: 42257
+  proxy: 🇩🇴 多米尼加丨5x DO
+- name: mixed258
+  type: mixed
+  port: 42258
+  proxy: 🇧🇧 巴巴多斯丨3x BB
+- name: mixed259
+  type: mixed
+  port: 42259
+  proxy: 🇱🇨 圣卢西亚丨3x LC
+- name: mixed260
+  type: mixed
+  port: 42260
+  proxy: 🇫🇰 福克兰群岛丨3x FK
+- name: mixed261
+  type: mixed
+  port: 42261
+  proxy: 🇹🇨 特克斯和凯科斯群岛丨3x TC
+- name: mixed262
+  type: mixed
+  port: 42262
+  proxy: 🇪🇬 埃及丨3x EG
+- name: mixed263
+  type: mixed
+  port: 42263
+  proxy: 🇬🇭 加纳丨3x GH
+- name: mixed264
+  type: mixed
+  port: 42264
+  proxy: 🇹🇬 多哥丨3x TG
+- name: mixed265
+  type: mixed
+  port: 42265
+  proxy: 🇿🇦 南非 01丨1x ZA
+- name: mixed266
+  type: mixed
+  port: 42266
+  proxy: 🇿🇦 南非 02丨1x ZA
+- name: mixed267
+  type: mixed
+  port: 42267
+  proxy: 🇧🇯 贝宁丨3x BJ
+- name: mixed268
+  type: mixed
+  port: 42268
+  proxy: 🇸🇩 苏丹丨3x SD
+- name: mixed269
+  type: mixed
+  port: 42269
+  proxy: 🇲🇱 马里丨3x ML
+- name: mixed270
+  type: mixed
+  port: 42270
+  proxy: 🇨🇬 刚果（布）丨3x CG
+- name: mixed271
+  type: mixed
+  port: 42271
+  proxy: 🇨🇩 刚果（金）丨3x CD
+- name: mixed272
+  type: mixed
+  port: 42272
+  proxy: 🇬🇦 加蓬丨3x GA
+- name: mixed273
+  type: mixed
+  port: 42273
+  proxy: 🇹🇩 乍得丨3x TD
+- name: mixed274
+  type: mixed
+  port: 42274
+  proxy: 🇲🇦 摩洛哥丨3x MA
+- name: mixed275
+  type: mixed
+  port: 42275
+  proxy: 🇹🇳 突尼斯丨2x TN
+- name: mixed276
+  type: mixed
+  port: 42276
+  proxy: 🇱🇾 利比亚丨3x LY
+- name: mixed277
+  type: mixed
+  port: 42277
+  proxy: 🇰🇪 肯尼亚丨1x KE
+- name: mixed278
+  type: mixed
+  port: 42278
+  proxy: 🇷🇼 卢旺达丨2x RW
+- name: mixed279
+  type: mixed
+  port: 42279
+  proxy: 🇨🇻 佛得角丨3x CV
+- name: mixed280
+  type: mixed
+  port: 42280
+  proxy: 🇦🇴 安哥拉丨3x AO
+- name: mixed281
+  type: mixed
+  port: 42281
+  proxy: 🇨🇲 喀麦隆丨3x CM
+- name: mixed282
+  type: mixed
+  port: 42282
+  proxy: 🇧🇮 布隆迪丨3x BI
+- name: mixed283
+  type: mixed
+  port: 42283
+  proxy: 🇸🇴 索马里丨3x SO
+- name: mixed284
+  type: mixed
+  port: 42284
+  proxy: 🇩🇯 吉布提丨3x DJ
+- name: mixed285
+  type: mixed
+  port: 42285
+  proxy: 🇬🇲 冈比亚丨3x GM
+- name: mixed286
+  type: mixed
+  port: 42286
+  proxy: 🇬🇳 几内亚丨3x GN
+- name: mixed287
+  type: mixed
+  port: 42287
+  proxy: 🇱🇸 莱索托丨3x LS
+- name: mixed288
+  type: mixed
+  port: 42288
+  proxy: 🇲🇼 马拉维丨3x MW
+- name: mixed289
+  type: mixed
+  port: 42289
+  proxy: 🇳🇪 尼日尔丨3x NE
+- name: mixed290
+  type: mixed
+  port: 42290
+  proxy: 🇺🇬 乌干达丨3x UG
+- name: mixed291
+  type: mixed
+  port: 42291
+  proxy: 🇾🇹 马约特丨3x YT
+- name: mixed292
+  type: mixed
+  port: 42292
+  proxy: 🇿🇲 赞比亚丨3x ZM
+- name: mixed293
+  type: mixed
+  port: 42293
+  proxy: 🇸🇸 南苏丹丨3x SS
+- name: mixed294
+  type: mixed
+  port: 42294
+  proxy: 🇸🇨 塞舌尔丨3x SC
+- name: mixed295
+  type: mixed
+  port: 42295
+  proxy: 🇰🇲 科摩罗丨3x KM
+- name: mixed296
+  type: mixed
+  port: 42296
+  proxy: 🇳🇬 尼日利亚丨2x NG
+- name: mixed297
+  type: mixed
+  port: 42297
+  proxy: 🇳🇬 尼日利亚住宅丨5x NG
+- name: mixed298
+  type: mixed
+  port: 42298
+  proxy: 🇲🇿 莫桑比克丨3x MZ
+- name: mixed299
+  type: mixed
+  port: 42299
+  proxy: 🇲🇺 毛里求斯丨2x MU
+- name: mixed300
+  type: mixed
+  port: 42300
+  proxy: 🇨🇮 科特迪瓦丨3x CI
+- name: mixed301
+  type: mixed
+  port: 42301
+  proxy: 🇹🇿 坦桑尼亚丨5x TZ
+- name: mixed302
+  type: mixed
+  port: 42302
+  proxy: 🇿🇼 津巴布韦丨3x ZW
+- name: mixed303
+  type: mixed
+  port: 42303
+  proxy: 🇸🇳 塞内加尔丨3x SN
+- name: mixed304
+  type: mixed
+  port: 42304
+  proxy: 🇧🇼 博茨瓦纳丨3x BW
+- name: mixed305
+  type: mixed
+  port: 42305
+  proxy: 🇳🇦 纳米比亚丨3x NA
+- name: mixed306
+  type: mixed
+  port: 42306
+  proxy: 🇸🇱 塞拉利昂丨3x SL
+- name: mixed307
+  type: mixed
+  port: 42307
+  proxy: 🇸🇿 斯威士兰丨3x SZ
+- name: mixed308
+  type: mixed
+  port: 42308
+  proxy: 🇱🇷 利比里亚丨3x LR
+- name: mixed309
+  type: mixed
+  port: 42309
+  proxy: 🇩🇿 阿尔及利亚丨3x DZ
+- name: mixed310
+  type: mixed
+  port: 42310
+  proxy: 🇲🇬 马达加斯加丨3x MG
+- name: mixed311
+  type: mixed
+  port: 42311
+  proxy: 🇬🇶 赤道几内亚丨3x GQ
+- name: mixed312
+  type: mixed
+  port: 42312
+  proxy: 🇧🇫 布基纳法索丨3x BF
+- name: mixed313
+  type: mixed
+  port: 42313
+  proxy: 🇪🇷 厄立特里亚丨3x ER
+- name: mixed314
+  type: mixed
+  port: 42314
+  proxy: 🇪🇹 埃塞俄比亚丨3x ET
+- name: mixed315
+  type: mixed
+  port: 42315
+  proxy: 🇲🇷 毛里塔尼亚丨3x MR
+- name: mixed316
+  type: mixed
+  port: 42316
+  proxy: 🇨🇫 中非共和国丨3x CF
+- name: mixed317
+  type: mixed
+  port: 42317
+  proxy: 🇬🇼 几内亚比绍丨3x GW
+- name: mixed318
+  type: mixed
+  port: 42318
+  proxy: 🇸🇹 圣多美和普林西比丨3x ST
+- name: mixed319
+  type: mixed
+  port: 42319
+  proxy: 🇦🇶 南极洲丨3x AQ
+- name: mixed320
+  type: mixed
+  port: 42320
+  proxy: 🇨🇳 中国大陆丨3x CN
 proxy-groups:
-  # 主选择组
-  - name: "🚀 节点选择"
-    type: select
-    proxies:
-      - "♻️ 自动选择"
-      - "🇭🇰 香港"
-      - "HK-Alibaba_Cloud"
-      - "HK-x-ui"
-      - DIRECT
-
-  # 自动选择组 - 基于延迟测试
-  - name: "♻️ 自动选择"
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    proxies:
-      - "HK-Alibaba_Cloud"
-      - "HK-x-ui"
-      - "HK-x-ui"
-
-  # 香港节点组
-  - name: "🇭🇰 香港"
-    type: select
-    proxies:
-      - "HK-Alibaba_Cloud"
-
-  # 流媒体选择
-  - name: "📺 流媒体"
-    type: select
-    proxies:
-      - "🇭🇰 香港"
-      - "♻️ 自动选择"
-      - "HK-Alibaba_Cloud"
-      - "HK-x-ui"
-
-  # 广告拦截
-  - name: "🛑 广告拦截"
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-
-# 规则配置
+- name: 节点选择
+  type: select
+  proxies:
+  - 自动选择
+  - DIRECT
+  - 🇭🇰 香港 01丨1x HK
+  - 🇭🇰 香港 02丨1x HK
+  - 🇭🇰 香港 03丨1x HK
+  - 🇭🇰 香港家宽 01丨1x HK
+  - 🇭🇰 香港家宽 02丨1x HK
+- name: 自动选择
+  type: url-test
+  proxies:
+  - 🇭🇰 香港 01丨1x HK
+  - 🇭🇰 香港 02丨1x HK
+  - 🇭🇰 香港 03丨1x HK
+  - 🇭🇰 香港家宽 01丨1x HK
+  - 🇭🇰 香港家宽 02丨1x HK
+  - 🇭🇰 香港家宽 03丨1x HK
+  - 🇭🇰 香港游戏丨2x HK
+  - 🇲🇴 澳门家宽 01丨5x MO
+  - 🇲🇴 澳门家宽 02丨5x MO
+  - 🇲🇴 澳门家宽 03丨5x MO
+  - 🇹🇼 台湾 01丨1x TW
+  - 🇹🇼 台湾 02丨1x TW
+  - 🇹🇼 台湾 03丨1x TW
+  - 🇹🇼 台湾家宽 01丨3x TW
+  - 🇹🇼 台湾家宽 02丨3x TW
+  - 🇹🇼 台湾家宽 03丨3x TW
+  - 🇸🇬 新加坡 01丨1x SG
+  - 🇸🇬 新加坡 02丨1x SG
+  - 🇸🇬 新加坡 03丨1x SG
+  - 🇸🇬 新加坡家宽 01丨3x SG
+  - 🇸🇬 新加坡家宽 02丨3x SG
+  - 🇸🇬 新加坡家宽 03丨3x SG
+  - 🇸🇬 新加坡家宽 04丨3x SG
+  - 🇲🇾 马来西亚家宽 01丨1x MY
+  - 🇲🇾 马来西亚家宽 02丨1x MY
+  - 🇲🇻 马尔代夫丨3x MV
+  - 🇰🇭 柬埔寨丨3x KH
+  - 🇹🇭 泰国 01丨3x TH
+  - 🇹🇭 泰国 02丨3x TH
+  - 🇲🇲 缅甸丨10x MM
+  - 🇱🇦 老挝丨5x LA
+  - 🇻🇳 越南家宽 01丨3x VN
+  - 🇻🇳 越南家宽 02丨3x VN
+  - 🇯🇵 日本 01丨1x JP
+  - 🇯🇵 日本 02丨1x JP
+  - 🇯🇵 日本 03丨1x JP
+  - 🇯🇵 日本 04丨3x JP
+  - 🇯🇵 日本 05丨3x JP
+  - 🇯🇵 日本家宽 01丨3x JP
+  - 🇯🇵 日本家宽 02丨3x JP
+  - 🇯🇵 日本家宽 03丨3x JP
+  - 🇯🇵 日本家宽 04丨3x JP
+  - 🇯🇵 日本家宽 05丨3x JP
+  - 🇯🇵 日本家宽 06丨3x JP
+  - 🇯🇵 日本家宽 07丨3x JP
+  - 🇯🇵 日本游戏丨2x JP
+  - 🇯🇵 日本-5G网络丨10x JP
+  - 🇯🇵 日本-星链丨20x JP
+  - 🇰🇷 韩国家宽 01丨5x KR
+  - 🇰🇷 韩国家宽 02丨5x KR
+  - 🇰🇷 韩国家宽 03丨5x KR
+  - 🇧🇹 不丹丨3x BT
+  - 🇧🇳 文莱丨5x BN
+  - 🇬🇺 关岛丨3x GU
+  - 🇲🇵 北马里亚纳群岛丨3x MP
+  - 🇫🇯 斐济丨3x FJ
+  - 🇫🇯 斐济住宅丨10x FJ
+  - 🇨🇰 库克群岛丨3x CK
+  - 🇵🇭 菲律宾丨2x PH
+  - 🇵🇭 菲律宾住宅丨10x PH
+  - 🇮🇩 印尼-棉兰丨1x ID
+  - 🇮🇩 印尼-雅加达丨1x ID
+  - 🇮🇳 印度丨1x IN
+  - 🇲🇳 蒙古丨2x MN
+  - 🇯🇴 约旦丨2x JO
+  - 🇾🇪 也门丨3x YE
+  - 🇮🇷 伊朗丨5x IR
+  - 🇧🇭 巴林丨5x BH
+  - 🇴🇲 阿曼丨3x OM
+  - 🇮🇱 以色列丨2x IL
+  - 🇵🇸 巴勒斯坦丨3x PS
+  - 🇹🇷 土耳其丨1x TR
+  - 🇳🇵 尼泊尔丨1x NP
+  - 🇹🇱 东帝汶丨3x TL
+  - 🇧🇩 孟加拉丨2x BD
+  - 🇱🇧 黎巴嫩丨5x LB
+  - 🇮🇶 伊拉克丨5x IQ
+  - 🇸🇾 叙利亚丨5x SY
+  - 🇦🇫 阿富汗丨3x AF
+  - 🇶🇦 卡塔尔丨3x QA
+  - 🇰🇼 科威特丨5x KW
+  - 🇦🇪 阿联酋丨2x AE
+  - 🇦🇪 阿联酋住宅丨5x AE
+  - 🇦🇿 阿塞拜疆丨2x AZ
+  - 🇦🇲 亚美尼亚丨2x AM
+  - 🇬🇪 格鲁吉亚丨1x GE
+  - 🇵🇰 巴基斯坦丨5x PK
+  - 🇱🇰 斯里兰卡丨10x LK
+  - 🇸🇦 沙特阿拉伯 01丨3x SA
+  - 🇸🇦 沙特阿拉伯 02丨3x SA
+  - 🇹🇲 土库曼斯坦丨3x TM
+  - 🇰🇿 哈萨克斯坦丨2x KZ
+  - 🇹🇯 塔吉克斯坦丨3x TJ
+  - 🇰🇬 吉尔吉斯斯坦丨1x KG
+  - 🇺🇿 乌兹别克斯坦丨1x UZ
+  - 🇹🇴 汤加丨3x TO
+  - 🇦🇺 澳大利亚-悉尼丨2x AU
+  - 🇦🇺 澳大利亚-墨尔本丨2x AU
+  - 🇳🇨 新喀里多尼亚丨3x NC
+  - 🇳🇿 新西兰丨2x NZ
+  - 🇳🇿 新西兰家宽丨3x NZ
+  - 🇳🇷 瑙鲁丨3x NR
+  - 🇳🇺 纽埃丨3x NU
+  - 🇵🇼 帕劳丨3x PW
+  - 🇼🇸 萨摩亚丨3x WS
+  - 🇦🇸 美属萨摩亚丨3x AS
+  - 🇹🇰 托克劳丨3x TK
+  - 🇰🇮 基里巴斯丨3x KI
+  - 🇻🇺 瓦努阿图丨3x VU
+  - 🇳🇫 诺福克岛丨3x NF
+  - 🇸🇧 所罗门群岛丨3x SB
+  - 🇲🇭 马绍尔群岛丨3x MH
+  - 🇫🇲 密克罗尼西亚丨3x FM
+  - 🇵🇫 法属波利尼西亚丨3x PF
+  - 🇵🇬 巴布亚新几内亚丨3x PG
+  - 🇼🇫 瓦利斯和富图纳丨3x WF
+  - 🇫🇷 法国 01丨1x FR
+  - 🇫🇷 法国 02丨1x FR
+  - 🇫🇷 法国住宅丨10x FR
+  - 🇬🇧 英国丨1x GB
+  - 🇬🇧 英国家宽 01丨5x GB
+  - 🇬🇧 英国家宽 02丨5x GB
+  - 🇬🇧 英国家宽 03丨3x GB
+  - 🇬🇧 英国家宽 04丨5x GB
+  - 🇮🇲 马恩岛丨3x IM
+  - 🇬🇬 根西岛丨3x GG
+  - 🇯🇪 泽西岛丨3x JE
+  - 🇩🇪 德国丨1x DE
+  - 🇩🇪 德国住宅丨5x DE
+  - 🇩🇰 丹麦丨1x DK
+  - 🇳🇴 挪威丨1x NO
+  - 🇸🇪 瑞典丨1x SE
+  - 🇫🇮 芬兰丨1x FI
+  - 🇫🇮 芬兰家宽丨3x FI
+  - 🇮🇸 冰岛丨2x IS
+  - 🇨🇭 瑞士丨2x CH
+  - 🇨🇿 捷克丨1x CZ
+  - 🇬🇷 希腊丨2x GR
+  - 🇳🇱 荷兰丨1x NL
+  - 🇵🇱 波兰丨1x PL
+  - 🇲🇪 黑山丨3x ME
+  - 🇷🇺 俄罗斯丨1x RU
+  - 🇺🇦 乌克兰丨2x UA
+  - 🇭🇺 匈牙利丨1x HU
+  - 🇱🇺 卢森堡丨2x LU
+  - 🇦🇹 奥地利丨2x AT
+  - 🇮🇹 意大利丨1x IT
+  - 🇮🇹 意大利家宽丨5x IT
+  - 🇻🇦 梵蒂冈丨3x VA
+  - 🇧🇪 比利时丨1x BE
+  - 🇮🇪 爱尔兰丨2x IE
+  - 🇱🇹 立陶宛丨1x LT
+  - 🇪🇸 西班牙丨1x ES
+  - 🇵🇹 葡萄牙丨1x PT
+  - 🇦🇩 安道尔丨3x AD
+  - 🇲🇹 马耳他丨3x MT
+  - 🇲🇨 摩纳哥丨3x MC
+  - 🇧🇬 保加利亚丨1x BG
+  - 🇭🇷 克罗地亚丨2x HR
+  - 🇲🇰 北马其顿丨2x MK
+  - 🇷🇸 塞尔维亚住宅丨3x RS
+  - 🇨🇾 塞浦路斯丨1x CY
+  - 🇱🇻 拉脱维亚丨1x LV
+  - 🇲🇩 摩尔多瓦丨2x MD
+  - 🇸🇰 斯洛伐克丨1x SK
+  - 🇪🇪 爱沙尼亚丨1x EE
+  - 🇧🇾 白俄罗斯丨3x BY
+  - 🇷🇴 罗马尼亚丨1x RO
+  - 🇬🇮 直布罗陀丨3x GI
+  - 🇸🇲 圣马力诺丨3x SM
+  - 🇫🇴 法罗群岛丨3x FO
+  - 🇦🇽 奥兰群岛丨3x AX
+  - 🇸🇮 斯洛文尼亚丨2x SI
+  - 🇦🇱 阿尔巴尼亚丨1x AL
+  - 🇧🇦 波黑共和国丨2x BA
+  - 🇱🇮 列支敦士登丨3x LI
+  - 🇷🇪 法属留尼汪丨2x RE
+  - 🇺🇸 美国-费城丨1x US
+  - 🇺🇸 美国-纽约 01丨1x US
+  - 🇺🇸 美国-纽约 02丨3x US
+  - 🇺🇸 美国-洛杉矶 01丨1x US
+  - 🇺🇸 美国-洛杉矶 02丨1x US
+  - 🇺🇸 美国-洛杉矶 03丨1x US
+  - 🇺🇸 美国-洛杉矶 04丨1x US
+  - 🇺🇸 美国-盐湖城丨1x US
+  - 🇺🇸 美国-圣何塞丨5x US
+  - 🇺🇸 美国-迈阿密丨1x US
+  - 🇺🇸 美国-西雅图丨1x US
+  - 🇺🇸 美国-檀香山丨3x US
+  - 🇺🇸 美国-旧金山丨1x US
+  - 🇺🇸 美国-凤凰城丨1x US
+  - 🇺🇸 美国-达拉斯丨1x US
+  - 🇺🇸 美国-芝加哥丨1x US
+  - 🇺🇸 美国-夏洛特丨1x US
+  - 🇺🇸 美国-斯波坎丨1x US
+  - 🇺🇸 美国-阿什本丨3x US
+  - 🇺🇸 美国-巴尔的摩丨3x US
+  - 🇺🇸 美国-拉斯维加斯丨1x US
+  - 🇺🇸 美国-家宽 01丨5x US
+  - 🇺🇸 美国-家宽 02丨5x US
+  - 🇺🇸 美国-家宽 03丨5x US
+  - 🇺🇸 美国-家宽 04丨5x US
+  - 🇨🇦 加拿大-温哥华丨2x CA
+  - 🇨🇦 加拿大-温尼伯丨1x CA
+  - 🇨🇦 加拿大-多伦多丨1x CA
+  - 🇨🇦 加拿大家宽 01丨3x CA
+  - 🇨🇦 加拿大家宽 02丨3x CA
+  - 🇵🇲 圣皮埃尔和密克隆丨3x PM
+  - 🇲🇽 墨西哥丨3x MX
+  - 🇲🇽 墨西哥家宽丨5x MX
+  - 🇲🇽 墨西哥星链丨20x MX
+  - 🇵🇦 巴拿马丨3x PA
+  - 🇧🇲 百慕大丨3x BM
+  - 🇬🇱 格陵兰丨3x GL
+  - 🇬🇩 格林纳达丨3x GD
+  - 🇨🇷 哥斯达黎加丨1x CR
+  - 🇻🇬 英属维尔京丨3x VG
+  - 🇻🇮 美属维尔京丨3x VI
+  - 🇧🇷 巴西丨1x BR
+  - 🇨🇱 智利丨2x CL
+  - 🇵🇪 秘鲁丨5x PE
+  - 🇨🇺 古巴丨3x CU
+  - 🇭🇹 海地丨3x HT
+  - 🇦🇷 阿根廷 01丨2x AR
+  - 🇦🇷 阿根廷 02丨2x AR
+  - 🇺🇾 乌拉圭丨3x UY
+  - 🇵🇾 巴拉圭丨3x PY
+  - 🇯🇲 牙买加丨3x JM
+  - 🇸🇷 苏里南丨3x SR
+  - 🇧🇸 巴哈马丨3x BS
+  - 🇬🇾 圭亚那丨3x GY
+  - 🇬🇫 法属圭亚那丨3x GF
+  - 🇧🇿 伯利兹丨3x BZ
+  - 🇲🇸 蒙特塞拉特丨3x MS
+  - 🇦🇼 荷属阿鲁巴丨3x AW
+  - 🇨🇼 荷属库拉索丨3x CW
+  - 🇸🇽 荷属圣马丁丨3x SX
+  - 🇲🇫 法属圣马丁丨3x MF
+  - 🇧🇱 圣巴泰勒米丨3x BL
+  - 🇬🇵 法属瓜德罗普丨3x GP
+  - 🇲🇶 法属马提尼克丨3x MQ
+  - 🇦🇬 安提瓜和巴布达丨3x AG
+  - 🇰🇳 圣基茨和尼维斯丨3x KN
+  - 🇹🇹 特立尼达和多巴哥丨3x TT
+  - 🇻🇨 圣文森特和格林纳丁斯丨3x VC
+  - 🇨🇴 哥伦比亚丨3x CO
+  - 🇪🇨 厄瓜多尔丨3x EC
+  - 🇻🇪 委内瑞拉丨3x VE
+  - 🇧🇴 玻利维亚丨3x BO
+  - 🇬🇹 危地马拉丨1x GT
+  - 🇸🇻 萨尔瓦多丨1x SV
+  - 🇵🇷 波多黎各丨3x PR
+  - 🇵🇷 波多黎各住宅丨5x PR
+  - 🇰🇾 开曼群岛丨3x KY
+  - 🇭🇳 洪都拉斯丨3x HN
+  - 🇳🇮 尼加拉瓜丨3x NI
+  - 🇩🇲 多米尼克丨3x DM
+  - 🇩🇴 多米尼加丨5x DO
+  - 🇧🇧 巴巴多斯丨3x BB
+  - 🇱🇨 圣卢西亚丨3x LC
+  - 🇫🇰 福克兰群岛丨3x FK
+  - 🇹🇨 特克斯和凯科斯群岛丨3x TC
+  - 🇪🇬 埃及丨3x EG
+  - 🇬🇭 加纳丨3x GH
+  - 🇹🇬 多哥丨3x TG
+  - 🇿🇦 南非 01丨1x ZA
+  - 🇿🇦 南非 02丨1x ZA
+  - 🇧🇯 贝宁丨3x BJ
+  - 🇸🇩 苏丹丨3x SD
+  - 🇲🇱 马里丨3x ML
+  - 🇨🇬 刚果（布）丨3x CG
+  - 🇨🇩 刚果（金）丨3x CD
+  - 🇬🇦 加蓬丨3x GA
+  - 🇹🇩 乍得丨3x TD
+  - 🇲🇦 摩洛哥丨3x MA
+  - 🇹🇳 突尼斯丨2x TN
+  - 🇱🇾 利比亚丨3x LY
+  - 🇰🇪 肯尼亚丨1x KE
+  - 🇷🇼 卢旺达丨2x RW
+  - 🇨🇻 佛得角丨3x CV
+  - 🇦🇴 安哥拉丨3x AO
+  - 🇨🇲 喀麦隆丨3x CM
+  - 🇧🇮 布隆迪丨3x BI
+  - 🇸🇴 索马里丨3x SO
+  - 🇩🇯 吉布提丨3x DJ
+  - 🇬🇲 冈比亚丨3x GM
+  - 🇬🇳 几内亚丨3x GN
+  - 🇱🇸 莱索托丨3x LS
+  - 🇲🇼 马拉维丨3x MW
+  - 🇳🇪 尼日尔丨3x NE
+  - 🇺🇬 乌干达丨3x UG
+  - 🇾🇹 马约特丨3x YT
+  - 🇿🇲 赞比亚丨3x ZM
+  - 🇸🇸 南苏丹丨3x SS
+  - 🇸🇨 塞舌尔丨3x SC
+  - 🇰🇲 科摩罗丨3x KM
+  - 🇳🇬 尼日利亚丨2x NG
+  - 🇳🇬 尼日利亚住宅丨5x NG
+  - 🇲🇿 莫桑比克丨3x MZ
+  - 🇲🇺 毛里求斯丨2x MU
+  - 🇨🇮 科特迪瓦丨3x CI
+  - 🇹🇿 坦桑尼亚丨5x TZ
+  - 🇿🇼 津巴布韦丨3x ZW
+  - 🇸🇳 塞内加尔丨3x SN
+  - 🇧🇼 博茨瓦纳丨3x BW
+  - 🇳🇦 纳米比亚丨3x NA
+  - 🇸🇱 塞拉利昂丨3x SL
+  - 🇸🇿 斯威士兰丨3x SZ
+  - 🇱🇷 利比里亚丨3x LR
+  - 🇩🇿 阿尔及利亚丨3x DZ
+  - 🇲🇬 马达加斯加丨3x MG
+  - 🇬🇶 赤道几内亚丨3x GQ
+  - 🇧🇫 布基纳法索丨3x BF
+  - 🇪🇷 厄立特里亚丨3x ER
+  - 🇪🇹 埃塞俄比亚丨3x ET
+  - 🇲🇷 毛里塔尼亚丨3x MR
+  - 🇨🇫 中非共和国丨3x CF
+  - 🇬🇼 几内亚比绍丨3x GW
+  - 🇸🇹 圣多美和普林西比丨3x ST
+  - 🇦🇶 南极洲丨3x AQ
+  - 🇨🇳 中国大陆丨3x CN
+  url: http://www.gstatic.com/generate_204
+  interval: 300
 rules:
-  # 广告拦截
-  - DOMAIN-SUFFIX,googlesyndication.com,🛑 广告拦截
-  - DOMAIN-SUFFIX,doubleclick.net,🛑 广告拦截
-  - DOMAIN-KEYWORD,adnxs,🛑 广告拦截
-  - DOMAIN-KEYWORD,adsystem,🛑 广告拦截
-  
-  # 流媒体规则
-  - DOMAIN-SUFFIX,netflix.com,📺 流媒体
-  - DOMAIN-SUFFIX,nflximg.net,📺 流媒体
-  - DOMAIN-SUFFIX,youtube.com,📺 流媒体
-  - DOMAIN-SUFFIX,googlevideo.com,📺 流媒体
-  
-  # 国外常用服务
-  - DOMAIN-SUFFIX,google.com,🚀 节点选择
-  - DOMAIN-SUFFIX,googleapis.com,🚀 节点选择
-  - DOMAIN-SUFFIX,facebook.com,🚀 节点选择
-  - DOMAIN-SUFFIX,twitter.com,🚀 节点选择
-  - DOMAIN-SUFFIX,telegram.org,🚀 节点选择
-  - DOMAIN-SUFFIX,instagram.com,🚀 节点选择
-  - DOMAIN-SUFFIX,openai.com,🚀 节点选择
-  - DOMAIN-SUFFIX,github.com,🚀 节点选择
-  
-  # 中国IP和域名直连
-  - GEOIP,CN,DIRECT
-  
-  # 最终规则
-  - MATCH,🚀 节点选择
+- MATCH,节点选择
