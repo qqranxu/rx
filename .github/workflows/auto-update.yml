@@ -1,0 +1,42 @@
+name: 自动更新独立IP配置
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-config:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v3
+      
+    - name: 设置Python环境
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: 安装依赖
+      run: |
+        pip install requests pyyaml
+        
+    - name: 生成最新配置
+      run: |
+        python 从订阅链接获取.py
+        
+    - name: 更新config.yaml
+      run: |
+        cp 独立IP配置.yaml config.yaml
+        
+    - name: 提交更新
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add config.yaml
+        git commit -m "自动更新独立IP配置 $(date)" || exit 0
+        git push
