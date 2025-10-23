@@ -330,6 +330,17 @@ proxies:
   plugin-opts:
     mode: http
     host: 2195a4c365c3.microsoft.com
+- name: 🇹🇭 泰国家宽 01丨5x TH
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20181
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
 - name: 🇲🇲 缅甸丨10x MM
   type: ss
   server: ix3udf69.epicgames.ink
@@ -3585,1142 +3596,1146 @@ listeners:
 - name: mixed29
   type: mixed
   port: 42029
-  proxy: 🇲🇲 缅甸丨10x MM
+  proxy: 🇹🇭 泰国家宽 01丨5x TH
 - name: mixed30
   type: mixed
   port: 42030
-  proxy: 🇱🇦 老挝丨5x LA
+  proxy: 🇲🇲 缅甸丨10x MM
 - name: mixed31
   type: mixed
   port: 42031
-  proxy: 🇻🇳 越南家宽 01丨2x VN
+  proxy: 🇱🇦 老挝丨5x LA
 - name: mixed32
   type: mixed
   port: 42032
-  proxy: 🇻🇳 越南家宽 02丨2x VN
+  proxy: 🇻🇳 越南家宽 01丨2x VN
 - name: mixed33
   type: mixed
   port: 42033
-  proxy: 🇻🇳 越南家宽 03丨2x VN
+  proxy: 🇻🇳 越南家宽 02丨2x VN
 - name: mixed34
   type: mixed
   port: 42034
-  proxy: 🇯🇵 日本 01丨1x JP
+  proxy: 🇻🇳 越南家宽 03丨2x VN
 - name: mixed35
   type: mixed
   port: 42035
-  proxy: 🇯🇵 日本 02丨1x JP
+  proxy: 🇯🇵 日本 01丨1x JP
 - name: mixed36
   type: mixed
   port: 42036
-  proxy: 🇯🇵 日本 03丨1x JP
+  proxy: 🇯🇵 日本 02丨1x JP
 - name: mixed37
   type: mixed
   port: 42037
-  proxy: 🇯🇵 日本 04丨3x JP
+  proxy: 🇯🇵 日本 03丨1x JP
 - name: mixed38
   type: mixed
   port: 42038
-  proxy: 🇯🇵 日本 05丨3x JP
+  proxy: 🇯🇵 日本 04丨3x JP
 - name: mixed39
   type: mixed
   port: 42039
-  proxy: 🇯🇵 日本家宽 01丨3x JP
+  proxy: 🇯🇵 日本 05丨3x JP
 - name: mixed40
   type: mixed
   port: 42040
-  proxy: 🇯🇵 日本家宽 02丨3x JP
+  proxy: 🇯🇵 日本家宽 01丨3x JP
 - name: mixed41
   type: mixed
   port: 42041
-  proxy: 🇯🇵 日本家宽 03丨3x JP
+  proxy: 🇯🇵 日本家宽 02丨3x JP
 - name: mixed42
   type: mixed
   port: 42042
-  proxy: 🇯🇵 日本家宽 04丨3x JP
+  proxy: 🇯🇵 日本家宽 03丨3x JP
 - name: mixed43
   type: mixed
   port: 42043
-  proxy: 🇯🇵 日本家宽 05丨3x JP
+  proxy: 🇯🇵 日本家宽 04丨3x JP
 - name: mixed44
   type: mixed
   port: 42044
-  proxy: 🇯🇵 日本家宽 06丨3x JP
+  proxy: 🇯🇵 日本家宽 05丨3x JP
 - name: mixed45
   type: mixed
   port: 42045
-  proxy: 🇯🇵 日本家宽 07丨3x JP
+  proxy: 🇯🇵 日本家宽 06丨3x JP
 - name: mixed46
   type: mixed
   port: 42046
-  proxy: 🇯🇵 日本游戏丨2x JP
+  proxy: 🇯🇵 日本家宽 07丨3x JP
 - name: mixed47
   type: mixed
   port: 42047
-  proxy: 🇯🇵 日本-5G网络丨10x JP
+  proxy: 🇯🇵 日本游戏丨2x JP
 - name: mixed48
   type: mixed
   port: 42048
-  proxy: 🇯🇵 日本-星链丨20x JP
+  proxy: 🇯🇵 日本-5G网络丨10x JP
 - name: mixed49
   type: mixed
   port: 42049
-  proxy: 🇰🇷 韩国家宽 01丨5x KR
+  proxy: 🇯🇵 日本-星链丨20x JP
 - name: mixed50
   type: mixed
   port: 42050
-  proxy: 🇰🇷 韩国家宽 02丨5x KR
+  proxy: 🇰🇷 韩国家宽 01丨5x KR
 - name: mixed51
   type: mixed
   port: 42051
-  proxy: 🇰🇷 韩国家宽 03丨5x KR
+  proxy: 🇰🇷 韩国家宽 02丨5x KR
 - name: mixed52
   type: mixed
   port: 42052
-  proxy: 🇧🇹 不丹丨3x BT
+  proxy: 🇰🇷 韩国家宽 03丨5x KR
 - name: mixed53
   type: mixed
   port: 42053
-  proxy: 🇧🇳 文莱丨5x BN
+  proxy: 🇧🇹 不丹丨3x BT
 - name: mixed54
   type: mixed
   port: 42054
-  proxy: 🇬🇺 关岛丨3x GU
+  proxy: 🇧🇳 文莱丨5x BN
 - name: mixed55
   type: mixed
   port: 42055
-  proxy: 🇲🇵 北马里亚纳群岛丨3x MP
+  proxy: 🇬🇺 关岛丨3x GU
 - name: mixed56
   type: mixed
   port: 42056
-  proxy: 🇫🇯 斐济丨3x FJ
+  proxy: 🇲🇵 北马里亚纳群岛丨3x MP
 - name: mixed57
   type: mixed
   port: 42057
-  proxy: 🇫🇯 斐济住宅丨10x FJ
+  proxy: 🇫🇯 斐济丨3x FJ
 - name: mixed58
   type: mixed
   port: 42058
-  proxy: 🇨🇰 库克群岛丨3x CK
+  proxy: 🇫🇯 斐济住宅丨10x FJ
 - name: mixed59
   type: mixed
   port: 42059
-  proxy: 🇵🇭 菲律宾丨2x PH
+  proxy: 🇨🇰 库克群岛丨3x CK
 - name: mixed60
   type: mixed
   port: 42060
-  proxy: 🇵🇭 菲律宾住宅丨10x PH
+  proxy: 🇵🇭 菲律宾丨2x PH
 - name: mixed61
   type: mixed
   port: 42061
-  proxy: 🇮🇩 印尼-棉兰丨1x ID
+  proxy: 🇵🇭 菲律宾住宅丨10x PH
 - name: mixed62
   type: mixed
   port: 42062
-  proxy: 🇮🇩 印尼-雅加达丨1x ID
+  proxy: 🇮🇩 印尼-棉兰丨1x ID
 - name: mixed63
   type: mixed
   port: 42063
-  proxy: 🇮🇳 印度丨1x IN
+  proxy: 🇮🇩 印尼-雅加达丨1x ID
 - name: mixed64
   type: mixed
   port: 42064
-  proxy: 🇲🇳 蒙古丨2x MN
+  proxy: 🇮🇳 印度丨1x IN
 - name: mixed65
   type: mixed
   port: 42065
-  proxy: 🇯🇴 约旦丨2x JO
+  proxy: 🇲🇳 蒙古丨2x MN
 - name: mixed66
   type: mixed
   port: 42066
-  proxy: 🇾🇪 也门丨3x YE
+  proxy: 🇯🇴 约旦丨2x JO
 - name: mixed67
   type: mixed
   port: 42067
-  proxy: 🇮🇷 伊朗丨5x IR
+  proxy: 🇾🇪 也门丨3x YE
 - name: mixed68
   type: mixed
   port: 42068
-  proxy: 🇧🇭 巴林丨5x BH
+  proxy: 🇮🇷 伊朗丨5x IR
 - name: mixed69
   type: mixed
   port: 42069
-  proxy: 🇴🇲 阿曼丨3x OM
+  proxy: 🇧🇭 巴林丨5x BH
 - name: mixed70
   type: mixed
   port: 42070
-  proxy: 🇮🇱 以色列丨2x IL
+  proxy: 🇴🇲 阿曼丨3x OM
 - name: mixed71
   type: mixed
   port: 42071
-  proxy: 🇵🇸 巴勒斯坦丨3x PS
+  proxy: 🇮🇱 以色列丨2x IL
 - name: mixed72
   type: mixed
   port: 42072
-  proxy: 🇹🇷 土耳其丨1x TR
+  proxy: 🇵🇸 巴勒斯坦丨3x PS
 - name: mixed73
   type: mixed
   port: 42073
-  proxy: 🇳🇵 尼泊尔丨1x NP
+  proxy: 🇹🇷 土耳其丨1x TR
 - name: mixed74
   type: mixed
   port: 42074
-  proxy: 🇹🇱 东帝汶丨3x TL
+  proxy: 🇳🇵 尼泊尔丨1x NP
 - name: mixed75
   type: mixed
   port: 42075
-  proxy: 🇧🇩 孟加拉丨2x BD
+  proxy: 🇹🇱 东帝汶丨3x TL
 - name: mixed76
   type: mixed
   port: 42076
-  proxy: 🇱🇧 黎巴嫩丨5x LB
+  proxy: 🇧🇩 孟加拉丨2x BD
 - name: mixed77
   type: mixed
   port: 42077
-  proxy: 🇮🇶 伊拉克丨5x IQ
+  proxy: 🇱🇧 黎巴嫩丨5x LB
 - name: mixed78
   type: mixed
   port: 42078
-  proxy: 🇸🇾 叙利亚丨5x SY
+  proxy: 🇮🇶 伊拉克丨5x IQ
 - name: mixed79
   type: mixed
   port: 42079
-  proxy: 🇦🇫 阿富汗丨3x AF
+  proxy: 🇸🇾 叙利亚丨5x SY
 - name: mixed80
   type: mixed
   port: 42080
-  proxy: 🇶🇦 卡塔尔丨3x QA
+  proxy: 🇦🇫 阿富汗丨3x AF
 - name: mixed81
   type: mixed
   port: 42081
-  proxy: 🇰🇼 科威特丨5x KW
+  proxy: 🇶🇦 卡塔尔丨3x QA
 - name: mixed82
   type: mixed
   port: 42082
-  proxy: 🇦🇪 阿联酋丨2x AE
+  proxy: 🇰🇼 科威特丨5x KW
 - name: mixed83
   type: mixed
   port: 42083
-  proxy: 🇦🇪 阿联酋住宅丨5x AE
+  proxy: 🇦🇪 阿联酋丨2x AE
 - name: mixed84
   type: mixed
   port: 42084
-  proxy: 🇦🇿 阿塞拜疆丨2x AZ
+  proxy: 🇦🇪 阿联酋住宅丨5x AE
 - name: mixed85
   type: mixed
   port: 42085
-  proxy: 🇦🇲 亚美尼亚丨2x AM
+  proxy: 🇦🇿 阿塞拜疆丨2x AZ
 - name: mixed86
   type: mixed
   port: 42086
-  proxy: 🇬🇪 格鲁吉亚丨1x GE
+  proxy: 🇦🇲 亚美尼亚丨2x AM
 - name: mixed87
   type: mixed
   port: 42087
-  proxy: 🇵🇰 巴基斯坦丨5x PK
+  proxy: 🇬🇪 格鲁吉亚丨1x GE
 - name: mixed88
   type: mixed
   port: 42088
-  proxy: 🇱🇰 斯里兰卡丨10x LK
+  proxy: 🇵🇰 巴基斯坦丨5x PK
 - name: mixed89
   type: mixed
   port: 42089
-  proxy: 🇸🇦 沙特阿拉伯 01丨3x SA
+  proxy: 🇱🇰 斯里兰卡丨10x LK
 - name: mixed90
   type: mixed
   port: 42090
-  proxy: 🇸🇦 沙特阿拉伯 02丨3x SA
+  proxy: 🇸🇦 沙特阿拉伯 01丨3x SA
 - name: mixed91
   type: mixed
   port: 42091
-  proxy: 🇹🇲 土库曼斯坦丨3x TM
+  proxy: 🇸🇦 沙特阿拉伯 02丨3x SA
 - name: mixed92
   type: mixed
   port: 42092
-  proxy: 🇰🇿 哈萨克斯坦丨2x KZ
+  proxy: 🇹🇲 土库曼斯坦丨3x TM
 - name: mixed93
   type: mixed
   port: 42093
-  proxy: 🇹🇯 塔吉克斯坦丨3x TJ
+  proxy: 🇰🇿 哈萨克斯坦丨2x KZ
 - name: mixed94
   type: mixed
   port: 42094
-  proxy: 🇰🇬 吉尔吉斯斯坦丨1x KG
+  proxy: 🇹🇯 塔吉克斯坦丨3x TJ
 - name: mixed95
   type: mixed
   port: 42095
-  proxy: 🇺🇿 乌兹别克斯坦丨1x UZ
+  proxy: 🇰🇬 吉尔吉斯斯坦丨1x KG
 - name: mixed96
   type: mixed
   port: 42096
-  proxy: 🇹🇴 汤加丨3x TO
+  proxy: 🇺🇿 乌兹别克斯坦丨1x UZ
 - name: mixed97
   type: mixed
   port: 42097
-  proxy: 🇦🇺 澳大利亚-悉尼丨2x AU
+  proxy: 🇹🇴 汤加丨3x TO
 - name: mixed98
   type: mixed
   port: 42098
-  proxy: 🇦🇺 澳大利亚-墨尔本丨2x AU
+  proxy: 🇦🇺 澳大利亚-悉尼丨2x AU
 - name: mixed99
   type: mixed
   port: 42099
-  proxy: 🇳🇨 新喀里多尼亚丨3x NC
+  proxy: 🇦🇺 澳大利亚-墨尔本丨2x AU
 - name: mixed100
   type: mixed
   port: 42100
-  proxy: 🇳🇿 新西兰丨2x NZ
+  proxy: 🇳🇨 新喀里多尼亚丨3x NC
 - name: mixed101
   type: mixed
   port: 42101
-  proxy: 🇳🇿 新西兰家宽丨3x NZ
+  proxy: 🇳🇿 新西兰丨2x NZ
 - name: mixed102
   type: mixed
   port: 42102
-  proxy: 🇳🇷 瑙鲁丨3x NR
+  proxy: 🇳🇿 新西兰家宽丨3x NZ
 - name: mixed103
   type: mixed
   port: 42103
-  proxy: 🇳🇺 纽埃丨3x NU
+  proxy: 🇳🇷 瑙鲁丨3x NR
 - name: mixed104
   type: mixed
   port: 42104
-  proxy: 🇵🇼 帕劳丨3x PW
+  proxy: 🇳🇺 纽埃丨3x NU
 - name: mixed105
   type: mixed
   port: 42105
-  proxy: 🇼🇸 萨摩亚丨3x WS
+  proxy: 🇵🇼 帕劳丨3x PW
 - name: mixed106
   type: mixed
   port: 42106
-  proxy: 🇦🇸 美属萨摩亚丨3x AS
+  proxy: 🇼🇸 萨摩亚丨3x WS
 - name: mixed107
   type: mixed
   port: 42107
-  proxy: 🇹🇰 托克劳丨3x TK
+  proxy: 🇦🇸 美属萨摩亚丨3x AS
 - name: mixed108
   type: mixed
   port: 42108
-  proxy: 🇰🇮 基里巴斯丨3x KI
+  proxy: 🇹🇰 托克劳丨3x TK
 - name: mixed109
   type: mixed
   port: 42109
-  proxy: 🇻🇺 瓦努阿图丨3x VU
+  proxy: 🇰🇮 基里巴斯丨3x KI
 - name: mixed110
   type: mixed
   port: 42110
-  proxy: 🇳🇫 诺福克岛丨3x NF
+  proxy: 🇻🇺 瓦努阿图丨3x VU
 - name: mixed111
   type: mixed
   port: 42111
-  proxy: 🇸🇧 所罗门群岛丨3x SB
+  proxy: 🇳🇫 诺福克岛丨3x NF
 - name: mixed112
   type: mixed
   port: 42112
-  proxy: 🇲🇭 马绍尔群岛丨3x MH
+  proxy: 🇸🇧 所罗门群岛丨3x SB
 - name: mixed113
   type: mixed
   port: 42113
-  proxy: 🇫🇲 密克罗尼西亚丨3x FM
+  proxy: 🇲🇭 马绍尔群岛丨3x MH
 - name: mixed114
   type: mixed
   port: 42114
-  proxy: 🇵🇫 法属波利尼西亚丨3x PF
+  proxy: 🇫🇲 密克罗尼西亚丨3x FM
 - name: mixed115
   type: mixed
   port: 42115
-  proxy: 🇵🇬 巴布亚新几内亚丨3x PG
+  proxy: 🇵🇫 法属波利尼西亚丨3x PF
 - name: mixed116
   type: mixed
   port: 42116
-  proxy: 🇼🇫 瓦利斯和富图纳丨3x WF
+  proxy: 🇵🇬 巴布亚新几内亚丨3x PG
 - name: mixed117
   type: mixed
   port: 42117
-  proxy: 🇫🇷 法国 01丨1x FR
+  proxy: 🇼🇫 瓦利斯和富图纳丨3x WF
 - name: mixed118
   type: mixed
   port: 42118
-  proxy: 🇫🇷 法国 02丨1x FR
+  proxy: 🇫🇷 法国 01丨1x FR
 - name: mixed119
   type: mixed
   port: 42119
-  proxy: 🇬🇧 英国丨1x GB
+  proxy: 🇫🇷 法国 02丨1x FR
 - name: mixed120
   type: mixed
   port: 42120
-  proxy: 🇬🇧 英国家宽 01丨5x GB
+  proxy: 🇬🇧 英国丨1x GB
 - name: mixed121
   type: mixed
   port: 42121
-  proxy: 🇬🇧 英国家宽 02丨5x GB
+  proxy: 🇬🇧 英国家宽 01丨5x GB
 - name: mixed122
   type: mixed
   port: 42122
-  proxy: 🇬🇧 英国家宽 03丨5x GB
+  proxy: 🇬🇧 英国家宽 02丨5x GB
 - name: mixed123
   type: mixed
   port: 42123
-  proxy: 🇮🇲 马恩岛丨3x IM
+  proxy: 🇬🇧 英国家宽 03丨5x GB
 - name: mixed124
   type: mixed
   port: 42124
-  proxy: 🇬🇬 根西岛丨3x GG
+  proxy: 🇮🇲 马恩岛丨3x IM
 - name: mixed125
   type: mixed
   port: 42125
-  proxy: 🇯🇪 泽西岛丨3x JE
+  proxy: 🇬🇬 根西岛丨3x GG
 - name: mixed126
   type: mixed
   port: 42126
-  proxy: 🇩🇪 德国丨1x DE
+  proxy: 🇯🇪 泽西岛丨3x JE
 - name: mixed127
   type: mixed
   port: 42127
-  proxy: 🇩🇪 德国住宅丨5x DE
+  proxy: 🇩🇪 德国丨1x DE
 - name: mixed128
   type: mixed
   port: 42128
-  proxy: 🇩🇰 丹麦丨1x DK
+  proxy: 🇩🇪 德国住宅丨5x DE
 - name: mixed129
   type: mixed
   port: 42129
-  proxy: 🇳🇴 挪威丨1x NO
+  proxy: 🇩🇰 丹麦丨1x DK
 - name: mixed130
   type: mixed
   port: 42130
-  proxy: 🇸🇪 瑞典丨1x SE
+  proxy: 🇳🇴 挪威丨1x NO
 - name: mixed131
   type: mixed
   port: 42131
-  proxy: 🇫🇮 芬兰丨1x FI
+  proxy: 🇸🇪 瑞典丨1x SE
 - name: mixed132
   type: mixed
   port: 42132
-  proxy: 🇮🇸 冰岛丨2x IS
+  proxy: 🇫🇮 芬兰丨1x FI
 - name: mixed133
   type: mixed
   port: 42133
-  proxy: 🇨🇭 瑞士丨2x CH
+  proxy: 🇮🇸 冰岛丨2x IS
 - name: mixed134
   type: mixed
   port: 42134
-  proxy: 🇨🇿 捷克丨1x CZ
+  proxy: 🇨🇭 瑞士丨2x CH
 - name: mixed135
   type: mixed
   port: 42135
-  proxy: 🇬🇷 希腊丨2x GR
+  proxy: 🇨🇿 捷克丨1x CZ
 - name: mixed136
   type: mixed
   port: 42136
-  proxy: 🇳🇱 荷兰丨1x NL
+  proxy: 🇬🇷 希腊丨2x GR
 - name: mixed137
   type: mixed
   port: 42137
-  proxy: 🇵🇱 波兰丨1x PL
+  proxy: 🇳🇱 荷兰丨1x NL
 - name: mixed138
   type: mixed
   port: 42138
-  proxy: 🇲🇪 黑山丨3x ME
+  proxy: 🇵🇱 波兰丨1x PL
 - name: mixed139
   type: mixed
   port: 42139
-  proxy: 🇷🇺 俄罗斯丨1x RU
+  proxy: 🇲🇪 黑山丨3x ME
 - name: mixed140
   type: mixed
   port: 42140
-  proxy: 🇺🇦 乌克兰丨2x UA
+  proxy: 🇷🇺 俄罗斯丨1x RU
 - name: mixed141
   type: mixed
   port: 42141
-  proxy: 🇭🇺 匈牙利丨1x HU
+  proxy: 🇺🇦 乌克兰丨2x UA
 - name: mixed142
   type: mixed
   port: 42142
-  proxy: 🇱🇺 卢森堡丨2x LU
+  proxy: 🇭🇺 匈牙利丨1x HU
 - name: mixed143
   type: mixed
   port: 42143
-  proxy: 🇦🇹 奥地利丨2x AT
+  proxy: 🇱🇺 卢森堡丨2x LU
 - name: mixed144
   type: mixed
   port: 42144
-  proxy: 🇮🇹 意大利丨1x IT
+  proxy: 🇦🇹 奥地利丨2x AT
 - name: mixed145
   type: mixed
   port: 42145
-  proxy: 🇮🇹 意大利家宽丨5x IT
+  proxy: 🇮🇹 意大利丨1x IT
 - name: mixed146
   type: mixed
   port: 42146
-  proxy: 🇻🇦 梵蒂冈丨3x VA
+  proxy: 🇮🇹 意大利家宽丨5x IT
 - name: mixed147
   type: mixed
   port: 42147
-  proxy: 🇧🇪 比利时丨1x BE
+  proxy: 🇻🇦 梵蒂冈丨3x VA
 - name: mixed148
   type: mixed
   port: 42148
-  proxy: 🇮🇪 爱尔兰丨2x IE
+  proxy: 🇧🇪 比利时丨1x BE
 - name: mixed149
   type: mixed
   port: 42149
-  proxy: 🇱🇹 立陶宛丨1x LT
+  proxy: 🇮🇪 爱尔兰丨2x IE
 - name: mixed150
   type: mixed
   port: 42150
-  proxy: 🇪🇸 西班牙丨1x ES
+  proxy: 🇱🇹 立陶宛丨1x LT
 - name: mixed151
   type: mixed
   port: 42151
-  proxy: 🇵🇹 葡萄牙丨1x PT
+  proxy: 🇪🇸 西班牙丨1x ES
 - name: mixed152
   type: mixed
   port: 42152
-  proxy: 🇦🇩 安道尔丨3x AD
+  proxy: 🇵🇹 葡萄牙丨1x PT
 - name: mixed153
   type: mixed
   port: 42153
-  proxy: 🇲🇹 马耳他丨3x MT
+  proxy: 🇦🇩 安道尔丨3x AD
 - name: mixed154
   type: mixed
   port: 42154
-  proxy: 🇲🇨 摩纳哥丨3x MC
+  proxy: 🇲🇹 马耳他丨3x MT
 - name: mixed155
   type: mixed
   port: 42155
-  proxy: 🇧🇬 保加利亚丨1x BG
+  proxy: 🇲🇨 摩纳哥丨3x MC
 - name: mixed156
   type: mixed
   port: 42156
-  proxy: 🇭🇷 克罗地亚丨2x HR
+  proxy: 🇧🇬 保加利亚丨1x BG
 - name: mixed157
   type: mixed
   port: 42157
-  proxy: 🇲🇰 北马其顿丨2x MK
+  proxy: 🇭🇷 克罗地亚丨2x HR
 - name: mixed158
   type: mixed
   port: 42158
-  proxy: 🇷🇸 塞尔维亚住宅丨3x RS
+  proxy: 🇲🇰 北马其顿丨2x MK
 - name: mixed159
   type: mixed
   port: 42159
-  proxy: 🇨🇾 塞浦路斯丨1x CY
+  proxy: 🇷🇸 塞尔维亚住宅丨3x RS
 - name: mixed160
   type: mixed
   port: 42160
-  proxy: 🇱🇻 拉脱维亚丨1x LV
+  proxy: 🇨🇾 塞浦路斯丨1x CY
 - name: mixed161
   type: mixed
   port: 42161
-  proxy: 🇲🇩 摩尔多瓦丨2x MD
+  proxy: 🇱🇻 拉脱维亚丨1x LV
 - name: mixed162
   type: mixed
   port: 42162
-  proxy: 🇸🇰 斯洛伐克丨1x SK
+  proxy: 🇲🇩 摩尔多瓦丨2x MD
 - name: mixed163
   type: mixed
   port: 42163
-  proxy: 🇪🇪 爱沙尼亚丨1x EE
+  proxy: 🇸🇰 斯洛伐克丨1x SK
 - name: mixed164
   type: mixed
   port: 42164
-  proxy: 🇧🇾 白俄罗斯丨3x BY
+  proxy: 🇪🇪 爱沙尼亚丨1x EE
 - name: mixed165
   type: mixed
   port: 42165
-  proxy: 🇷🇴 罗马尼亚丨1x RO
+  proxy: 🇧🇾 白俄罗斯丨3x BY
 - name: mixed166
   type: mixed
   port: 42166
-  proxy: 🇬🇮 直布罗陀丨3x GI
+  proxy: 🇷🇴 罗马尼亚丨1x RO
 - name: mixed167
   type: mixed
   port: 42167
-  proxy: 🇸🇲 圣马力诺丨3x SM
+  proxy: 🇬🇮 直布罗陀丨3x GI
 - name: mixed168
   type: mixed
   port: 42168
-  proxy: 🇫🇴 法罗群岛丨3x FO
+  proxy: 🇸🇲 圣马力诺丨3x SM
 - name: mixed169
   type: mixed
   port: 42169
-  proxy: 🇦🇽 奥兰群岛丨3x AX
+  proxy: 🇫🇴 法罗群岛丨3x FO
 - name: mixed170
   type: mixed
   port: 42170
-  proxy: 🇸🇮 斯洛文尼亚丨2x SI
+  proxy: 🇦🇽 奥兰群岛丨3x AX
 - name: mixed171
   type: mixed
   port: 42171
-  proxy: 🇦🇱 阿尔巴尼亚丨1x AL
+  proxy: 🇸🇮 斯洛文尼亚丨2x SI
 - name: mixed172
   type: mixed
   port: 42172
-  proxy: 🇧🇦 波黑共和国丨2x BA
+  proxy: 🇦🇱 阿尔巴尼亚丨1x AL
 - name: mixed173
   type: mixed
   port: 42173
-  proxy: 🇱🇮 列支敦士登丨3x LI
+  proxy: 🇧🇦 波黑共和国丨2x BA
 - name: mixed174
   type: mixed
   port: 42174
-  proxy: 🇷🇪 法属留尼汪丨2x RE
+  proxy: 🇱🇮 列支敦士登丨3x LI
 - name: mixed175
   type: mixed
   port: 42175
-  proxy: 🇺🇸 美国-费城丨1x US
+  proxy: 🇷🇪 法属留尼汪丨2x RE
 - name: mixed176
   type: mixed
   port: 42176
-  proxy: 🇺🇸 美国-纽约 01丨1x US
+  proxy: 🇺🇸 美国-费城丨1x US
 - name: mixed177
   type: mixed
   port: 42177
-  proxy: 🇺🇸 美国-纽约 02丨3x US
+  proxy: 🇺🇸 美国-纽约 01丨1x US
 - name: mixed178
   type: mixed
   port: 42178
-  proxy: 🇺🇸 美国-洛杉矶 01丨1x US
+  proxy: 🇺🇸 美国-纽约 02丨3x US
 - name: mixed179
   type: mixed
   port: 42179
-  proxy: 🇺🇸 美国-洛杉矶 02丨1x US
+  proxy: 🇺🇸 美国-洛杉矶 01丨1x US
 - name: mixed180
   type: mixed
   port: 42180
-  proxy: 🇺🇸 美国-洛杉矶 03丨1x US
+  proxy: 🇺🇸 美国-洛杉矶 02丨1x US
 - name: mixed181
   type: mixed
   port: 42181
-  proxy: 🇺🇸 美国-洛杉矶 04丨1x US
+  proxy: 🇺🇸 美国-洛杉矶 03丨1x US
 - name: mixed182
   type: mixed
   port: 42182
-  proxy: 🇺🇸 美国-盐湖城丨1x US
+  proxy: 🇺🇸 美国-洛杉矶 04丨1x US
 - name: mixed183
   type: mixed
   port: 42183
-  proxy: 🇺🇸 美国-圣何塞丨5x US
+  proxy: 🇺🇸 美国-盐湖城丨1x US
 - name: mixed184
   type: mixed
   port: 42184
-  proxy: 🇺🇸 美国-迈阿密丨1x US
+  proxy: 🇺🇸 美国-圣何塞丨5x US
 - name: mixed185
   type: mixed
   port: 42185
-  proxy: 🇺🇸 美国-西雅图丨1x US
+  proxy: 🇺🇸 美国-迈阿密丨1x US
 - name: mixed186
   type: mixed
   port: 42186
-  proxy: 🇺🇸 美国-檀香山丨3x US
+  proxy: 🇺🇸 美国-西雅图丨1x US
 - name: mixed187
   type: mixed
   port: 42187
-  proxy: 🇺🇸 美国-旧金山丨1x US
+  proxy: 🇺🇸 美国-檀香山丨3x US
 - name: mixed188
   type: mixed
   port: 42188
-  proxy: 🇺🇸 美国-凤凰城丨1x US
+  proxy: 🇺🇸 美国-旧金山丨1x US
 - name: mixed189
   type: mixed
   port: 42189
-  proxy: 🇺🇸 美国-达拉斯丨1x US
+  proxy: 🇺🇸 美国-凤凰城丨1x US
 - name: mixed190
   type: mixed
   port: 42190
-  proxy: 🇺🇸 美国-芝加哥丨1x US
+  proxy: 🇺🇸 美国-达拉斯丨1x US
 - name: mixed191
   type: mixed
   port: 42191
-  proxy: 🇺🇸 美国-夏洛特丨1x US
+  proxy: 🇺🇸 美国-芝加哥丨1x US
 - name: mixed192
   type: mixed
   port: 42192
-  proxy: 🇺🇸 美国-斯波坎丨1x US
+  proxy: 🇺🇸 美国-夏洛特丨1x US
 - name: mixed193
   type: mixed
   port: 42193
-  proxy: 🇺🇸 美国-阿什本丨3x US
+  proxy: 🇺🇸 美国-斯波坎丨1x US
 - name: mixed194
   type: mixed
   port: 42194
-  proxy: 🇺🇸 美国-巴尔的摩丨3x US
+  proxy: 🇺🇸 美国-阿什本丨3x US
 - name: mixed195
   type: mixed
   port: 42195
-  proxy: 🇺🇸 美国-拉斯维加斯丨1x US
+  proxy: 🇺🇸 美国-巴尔的摩丨3x US
 - name: mixed196
   type: mixed
   port: 42196
-  proxy: 🇺🇸 美国-家宽 01丨5x US
+  proxy: 🇺🇸 美国-拉斯维加斯丨1x US
 - name: mixed197
   type: mixed
   port: 42197
-  proxy: 🇺🇸 美国-家宽 02丨5x US
+  proxy: 🇺🇸 美国-家宽 01丨5x US
 - name: mixed198
   type: mixed
   port: 42198
-  proxy: 🇺🇸 美国-家宽 03丨5x US
+  proxy: 🇺🇸 美国-家宽 02丨5x US
 - name: mixed199
   type: mixed
   port: 42199
-  proxy: 🇺🇸 美国-家宽 04丨5x US
+  proxy: 🇺🇸 美国-家宽 03丨5x US
 - name: mixed200
   type: mixed
   port: 42200
-  proxy: 🇨🇦 加拿大-家宽 01丨2x CA
+  proxy: 🇺🇸 美国-家宽 04丨5x US
 - name: mixed201
   type: mixed
   port: 42201
-  proxy: 🇨🇦 加拿大-家宽 02丨2x CA
+  proxy: 🇨🇦 加拿大-家宽 01丨2x CA
 - name: mixed202
   type: mixed
   port: 42202
-  proxy: 🇨🇦 加拿大-家宽 03丨1x CA
+  proxy: 🇨🇦 加拿大-家宽 02丨2x CA
 - name: mixed203
   type: mixed
   port: 42203
-  proxy: 🇵🇲 圣皮埃尔和密克隆丨3x PM
+  proxy: 🇨🇦 加拿大-家宽 03丨1x CA
 - name: mixed204
   type: mixed
   port: 42204
-  proxy: 🇲🇽 墨西哥丨3x MX
+  proxy: 🇵🇲 圣皮埃尔和密克隆丨3x PM
 - name: mixed205
   type: mixed
   port: 42205
-  proxy: 🇲🇽 墨西哥星链丨20x MX
+  proxy: 🇲🇽 墨西哥丨3x MX
 - name: mixed206
   type: mixed
   port: 42206
-  proxy: 🇵🇦 巴拿马丨3x PA
+  proxy: 🇲🇽 墨西哥星链丨20x MX
 - name: mixed207
   type: mixed
   port: 42207
-  proxy: 🇧🇲 百慕大丨3x BM
+  proxy: 🇵🇦 巴拿马丨3x PA
 - name: mixed208
   type: mixed
   port: 42208
-  proxy: 🇬🇱 格陵兰丨3x GL
+  proxy: 🇧🇲 百慕大丨3x BM
 - name: mixed209
   type: mixed
   port: 42209
-  proxy: 🇬🇩 格林纳达丨3x GD
+  proxy: 🇬🇱 格陵兰丨3x GL
 - name: mixed210
   type: mixed
   port: 42210
-  proxy: 🇨🇷 哥斯达黎加丨1x CR
+  proxy: 🇬🇩 格林纳达丨3x GD
 - name: mixed211
   type: mixed
   port: 42211
-  proxy: 🇻🇬 英属维尔京丨3x VG
+  proxy: 🇨🇷 哥斯达黎加丨1x CR
 - name: mixed212
   type: mixed
   port: 42212
-  proxy: 🇻🇮 美属维尔京丨3x VI
+  proxy: 🇻🇬 英属维尔京丨3x VG
 - name: mixed213
   type: mixed
   port: 42213
-  proxy: 🇧🇷 巴西丨1x BR
+  proxy: 🇻🇮 美属维尔京丨3x VI
 - name: mixed214
   type: mixed
   port: 42214
-  proxy: 🇨🇱 智利丨2x CL
+  proxy: 🇧🇷 巴西丨1x BR
 - name: mixed215
   type: mixed
   port: 42215
-  proxy: 🇵🇪 秘鲁丨5x PE
+  proxy: 🇨🇱 智利丨2x CL
 - name: mixed216
   type: mixed
   port: 42216
-  proxy: 🇨🇺 古巴丨3x CU
+  proxy: 🇵🇪 秘鲁丨5x PE
 - name: mixed217
   type: mixed
   port: 42217
-  proxy: 🇭🇹 海地丨3x HT
+  proxy: 🇨🇺 古巴丨3x CU
 - name: mixed218
   type: mixed
   port: 42218
-  proxy: 🇦🇷 阿根廷 01丨2x AR
+  proxy: 🇭🇹 海地丨3x HT
 - name: mixed219
   type: mixed
   port: 42219
-  proxy: 🇦🇷 阿根廷 02丨2x AR
+  proxy: 🇦🇷 阿根廷 01丨2x AR
 - name: mixed220
   type: mixed
   port: 42220
-  proxy: 🇺🇾 乌拉圭丨3x UY
+  proxy: 🇦🇷 阿根廷 02丨2x AR
 - name: mixed221
   type: mixed
   port: 42221
-  proxy: 🇵🇾 巴拉圭丨3x PY
+  proxy: 🇺🇾 乌拉圭丨3x UY
 - name: mixed222
   type: mixed
   port: 42222
-  proxy: 🇯🇲 牙买加丨3x JM
+  proxy: 🇵🇾 巴拉圭丨3x PY
 - name: mixed223
   type: mixed
   port: 42223
-  proxy: 🇸🇷 苏里南丨3x SR
+  proxy: 🇯🇲 牙买加丨3x JM
 - name: mixed224
   type: mixed
   port: 42224
-  proxy: 🇧🇸 巴哈马丨3x BS
+  proxy: 🇸🇷 苏里南丨3x SR
 - name: mixed225
   type: mixed
   port: 42225
-  proxy: 🇬🇾 圭亚那丨3x GY
+  proxy: 🇧🇸 巴哈马丨3x BS
 - name: mixed226
   type: mixed
   port: 42226
-  proxy: 🇬🇫 法属圭亚那丨3x GF
+  proxy: 🇬🇾 圭亚那丨3x GY
 - name: mixed227
   type: mixed
   port: 42227
-  proxy: 🇧🇿 伯利兹丨3x BZ
+  proxy: 🇬🇫 法属圭亚那丨3x GF
 - name: mixed228
   type: mixed
   port: 42228
-  proxy: 🇲🇸 蒙特塞拉特丨3x MS
+  proxy: 🇧🇿 伯利兹丨3x BZ
 - name: mixed229
   type: mixed
   port: 42229
-  proxy: 🇦🇼 荷属阿鲁巴丨3x AW
+  proxy: 🇲🇸 蒙特塞拉特丨3x MS
 - name: mixed230
   type: mixed
   port: 42230
-  proxy: 🇨🇼 荷属库拉索丨3x CW
+  proxy: 🇦🇼 荷属阿鲁巴丨3x AW
 - name: mixed231
   type: mixed
   port: 42231
-  proxy: 🇸🇽 荷属圣马丁丨3x SX
+  proxy: 🇨🇼 荷属库拉索丨3x CW
 - name: mixed232
   type: mixed
   port: 42232
-  proxy: 🇲🇫 法属圣马丁丨3x MF
+  proxy: 🇸🇽 荷属圣马丁丨3x SX
 - name: mixed233
   type: mixed
   port: 42233
-  proxy: 🇧🇱 圣巴泰勒米丨3x BL
+  proxy: 🇲🇫 法属圣马丁丨3x MF
 - name: mixed234
   type: mixed
   port: 42234
-  proxy: 🇬🇵 法属瓜德罗普丨3x GP
+  proxy: 🇧🇱 圣巴泰勒米丨3x BL
 - name: mixed235
   type: mixed
   port: 42235
-  proxy: 🇲🇶 法属马提尼克丨3x MQ
+  proxy: 🇬🇵 法属瓜德罗普丨3x GP
 - name: mixed236
   type: mixed
   port: 42236
-  proxy: 🇦🇬 安提瓜和巴布达丨3x AG
+  proxy: 🇲🇶 法属马提尼克丨3x MQ
 - name: mixed237
   type: mixed
   port: 42237
-  proxy: 🇰🇳 圣基茨和尼维斯丨3x KN
+  proxy: 🇦🇬 安提瓜和巴布达丨3x AG
 - name: mixed238
   type: mixed
   port: 42238
-  proxy: 🇹🇹 特立尼达和多巴哥丨3x TT
+  proxy: 🇰🇳 圣基茨和尼维斯丨3x KN
 - name: mixed239
   type: mixed
   port: 42239
-  proxy: 🇻🇨 圣文森特和格林纳丁斯丨3x VC
+  proxy: 🇹🇹 特立尼达和多巴哥丨3x TT
 - name: mixed240
   type: mixed
   port: 42240
-  proxy: 🇨🇴 哥伦比亚丨3x CO
+  proxy: 🇻🇨 圣文森特和格林纳丁斯丨3x VC
 - name: mixed241
   type: mixed
   port: 42241
-  proxy: 🇪🇨 厄瓜多尔丨3x EC
+  proxy: 🇨🇴 哥伦比亚丨3x CO
 - name: mixed242
   type: mixed
   port: 42242
-  proxy: 🇻🇪 委内瑞拉丨3x VE
+  proxy: 🇪🇨 厄瓜多尔丨3x EC
 - name: mixed243
   type: mixed
   port: 42243
-  proxy: 🇧🇴 玻利维亚丨3x BO
+  proxy: 🇻🇪 委内瑞拉丨3x VE
 - name: mixed244
   type: mixed
   port: 42244
-  proxy: 🇬🇹 危地马拉丨1x GT
+  proxy: 🇧🇴 玻利维亚丨3x BO
 - name: mixed245
   type: mixed
   port: 42245
-  proxy: 🇸🇻 萨尔瓦多丨1x SV
+  proxy: 🇬🇹 危地马拉丨1x GT
 - name: mixed246
   type: mixed
   port: 42246
-  proxy: 🇵🇷 波多黎各丨3x PR
+  proxy: 🇸🇻 萨尔瓦多丨1x SV
 - name: mixed247
   type: mixed
   port: 42247
-  proxy: 🇵🇷 波多黎各住宅丨5x PR
+  proxy: 🇵🇷 波多黎各丨3x PR
 - name: mixed248
   type: mixed
   port: 42248
-  proxy: 🇰🇾 开曼群岛丨3x KY
+  proxy: 🇵🇷 波多黎各住宅丨5x PR
 - name: mixed249
   type: mixed
   port: 42249
-  proxy: 🇭🇳 洪都拉斯丨3x HN
+  proxy: 🇰🇾 开曼群岛丨3x KY
 - name: mixed250
   type: mixed
   port: 42250
-  proxy: 🇳🇮 尼加拉瓜丨3x NI
+  proxy: 🇭🇳 洪都拉斯丨3x HN
 - name: mixed251
   type: mixed
   port: 42251
-  proxy: 🇩🇲 多米尼克丨3x DM
+  proxy: 🇳🇮 尼加拉瓜丨3x NI
 - name: mixed252
   type: mixed
   port: 42252
-  proxy: 🇩🇴 多米尼加丨5x DO
+  proxy: 🇩🇲 多米尼克丨3x DM
 - name: mixed253
   type: mixed
   port: 42253
-  proxy: 🇧🇧 巴巴多斯丨3x BB
+  proxy: 🇩🇴 多米尼加丨5x DO
 - name: mixed254
   type: mixed
   port: 42254
-  proxy: 🇱🇨 圣卢西亚丨3x LC
+  proxy: 🇧🇧 巴巴多斯丨3x BB
 - name: mixed255
   type: mixed
   port: 42255
-  proxy: 🇫🇰 福克兰群岛丨3x FK
+  proxy: 🇱🇨 圣卢西亚丨3x LC
 - name: mixed256
   type: mixed
   port: 42256
-  proxy: 🇹🇨 特克斯和凯科斯群岛丨3x TC
+  proxy: 🇫🇰 福克兰群岛丨3x FK
 - name: mixed257
   type: mixed
   port: 42257
-  proxy: 🇪🇬 埃及丨3x EG
+  proxy: 🇹🇨 特克斯和凯科斯群岛丨3x TC
 - name: mixed258
   type: mixed
   port: 42258
-  proxy: 🇹🇬 多哥丨3x TG
+  proxy: 🇪🇬 埃及丨3x EG
 - name: mixed259
   type: mixed
   port: 42259
-  proxy: 🇿🇦 南非 01丨1x ZA
+  proxy: 🇹🇬 多哥丨3x TG
 - name: mixed260
   type: mixed
   port: 42260
-  proxy: 🇿🇦 南非 02丨1x ZA
+  proxy: 🇿🇦 南非 01丨1x ZA
 - name: mixed261
   type: mixed
   port: 42261
-  proxy: 🇧🇯 贝宁丨3x BJ
+  proxy: 🇿🇦 南非 02丨1x ZA
 - name: mixed262
   type: mixed
   port: 42262
-  proxy: 🇸🇩 苏丹丨3x SD
+  proxy: 🇧🇯 贝宁丨3x BJ
 - name: mixed263
   type: mixed
   port: 42263
-  proxy: 🇲🇱 马里丨3x ML
+  proxy: 🇸🇩 苏丹丨3x SD
 - name: mixed264
   type: mixed
   port: 42264
-  proxy: 🇨🇬 刚果（布）丨3x CG
+  proxy: 🇲🇱 马里丨3x ML
 - name: mixed265
   type: mixed
   port: 42265
-  proxy: 🇨🇩 刚果（金）丨3x CD
+  proxy: 🇨🇬 刚果（布）丨3x CG
 - name: mixed266
   type: mixed
   port: 42266
-  proxy: 🇬🇦 加蓬丨3x GA
+  proxy: 🇨🇩 刚果（金）丨3x CD
 - name: mixed267
   type: mixed
   port: 42267
-  proxy: 🇹🇩 乍得丨3x TD
+  proxy: 🇬🇦 加蓬丨3x GA
 - name: mixed268
   type: mixed
   port: 42268
-  proxy: 🇲🇦 摩洛哥丨3x MA
+  proxy: 🇹🇩 乍得丨3x TD
 - name: mixed269
   type: mixed
   port: 42269
-  proxy: 🇹🇳 突尼斯丨2x TN
+  proxy: 🇲🇦 摩洛哥丨3x MA
 - name: mixed270
   type: mixed
   port: 42270
-  proxy: 🇱🇾 利比亚丨3x LY
+  proxy: 🇹🇳 突尼斯丨2x TN
 - name: mixed271
   type: mixed
   port: 42271
-  proxy: 🇰🇪 肯尼亚丨1x KE
+  proxy: 🇱🇾 利比亚丨3x LY
 - name: mixed272
   type: mixed
   port: 42272
-  proxy: 🇷🇼 卢旺达丨2x RW
+  proxy: 🇰🇪 肯尼亚丨1x KE
 - name: mixed273
   type: mixed
   port: 42273
-  proxy: 🇨🇻 佛得角丨3x CV
+  proxy: 🇷🇼 卢旺达丨2x RW
 - name: mixed274
   type: mixed
   port: 42274
-  proxy: 🇦🇴 安哥拉丨3x AO
+  proxy: 🇨🇻 佛得角丨3x CV
 - name: mixed275
   type: mixed
   port: 42275
-  proxy: 🇧🇮 布隆迪丨3x BI
+  proxy: 🇦🇴 安哥拉丨3x AO
 - name: mixed276
   type: mixed
   port: 42276
-  proxy: 🇸🇴 索马里丨3x SO
+  proxy: 🇧🇮 布隆迪丨3x BI
 - name: mixed277
   type: mixed
   port: 42277
-  proxy: 🇩🇯 吉布提丨3x DJ
+  proxy: 🇸🇴 索马里丨3x SO
 - name: mixed278
   type: mixed
   port: 42278
-  proxy: 🇬🇲 冈比亚丨3x GM
+  proxy: 🇩🇯 吉布提丨3x DJ
 - name: mixed279
   type: mixed
   port: 42279
-  proxy: 🇬🇳 几内亚丨3x GN
+  proxy: 🇬🇲 冈比亚丨3x GM
 - name: mixed280
   type: mixed
   port: 42280
-  proxy: 🇱🇸 莱索托丨3x LS
+  proxy: 🇬🇳 几内亚丨3x GN
 - name: mixed281
   type: mixed
   port: 42281
-  proxy: 🇲🇼 马拉维丨3x MW
+  proxy: 🇱🇸 莱索托丨3x LS
 - name: mixed282
   type: mixed
   port: 42282
-  proxy: 🇳🇪 尼日尔丨3x NE
+  proxy: 🇲🇼 马拉维丨3x MW
 - name: mixed283
   type: mixed
   port: 42283
-  proxy: 🇺🇬 乌干达丨3x UG
+  proxy: 🇳🇪 尼日尔丨3x NE
 - name: mixed284
   type: mixed
   port: 42284
-  proxy: 🇾🇹 马约特丨3x YT
+  proxy: 🇺🇬 乌干达丨3x UG
 - name: mixed285
   type: mixed
   port: 42285
-  proxy: 🇿🇲 赞比亚丨3x ZM
+  proxy: 🇾🇹 马约特丨3x YT
 - name: mixed286
   type: mixed
   port: 42286
-  proxy: 🇸🇸 南苏丹丨3x SS
+  proxy: 🇿🇲 赞比亚丨3x ZM
 - name: mixed287
   type: mixed
   port: 42287
-  proxy: 🇸🇨 塞舌尔丨3x SC
+  proxy: 🇸🇸 南苏丹丨3x SS
 - name: mixed288
   type: mixed
   port: 42288
-  proxy: 🇰🇲 科摩罗丨3x KM
+  proxy: 🇸🇨 塞舌尔丨3x SC
 - name: mixed289
   type: mixed
   port: 42289
-  proxy: 🇳🇬 尼日利亚丨2x NG
+  proxy: 🇰🇲 科摩罗丨3x KM
 - name: mixed290
   type: mixed
   port: 42290
-  proxy: 🇳🇬 尼日利亚住宅丨5x NG
+  proxy: 🇳🇬 尼日利亚丨2x NG
 - name: mixed291
   type: mixed
   port: 42291
-  proxy: 🇲🇿 莫桑比克丨3x MZ
+  proxy: 🇳🇬 尼日利亚住宅丨5x NG
 - name: mixed292
   type: mixed
   port: 42292
-  proxy: 🇲🇺 毛里求斯丨2x MU
+  proxy: 🇲🇿 莫桑比克丨3x MZ
 - name: mixed293
   type: mixed
   port: 42293
-  proxy: 🇨🇮 科特迪瓦丨3x CI
+  proxy: 🇲🇺 毛里求斯丨2x MU
 - name: mixed294
   type: mixed
   port: 42294
-  proxy: 🇹🇿 坦桑尼亚丨5x TZ
+  proxy: 🇨🇮 科特迪瓦丨3x CI
 - name: mixed295
   type: mixed
   port: 42295
-  proxy: 🇿🇼 津巴布韦丨3x ZW
+  proxy: 🇹🇿 坦桑尼亚丨5x TZ
 - name: mixed296
   type: mixed
   port: 42296
-  proxy: 🇸🇳 塞内加尔丨3x SN
+  proxy: 🇿🇼 津巴布韦丨3x ZW
 - name: mixed297
   type: mixed
   port: 42297
-  proxy: 🇧🇼 博茨瓦纳丨3x BW
+  proxy: 🇸🇳 塞内加尔丨3x SN
 - name: mixed298
   type: mixed
   port: 42298
-  proxy: 🇳🇦 纳米比亚丨3x NA
+  proxy: 🇧🇼 博茨瓦纳丨3x BW
 - name: mixed299
   type: mixed
   port: 42299
-  proxy: 🇸🇱 塞拉利昂丨3x SL
+  proxy: 🇳🇦 纳米比亚丨3x NA
 - name: mixed300
   type: mixed
   port: 42300
-  proxy: 🇸🇿 斯威士兰丨3x SZ
+  proxy: 🇸🇱 塞拉利昂丨3x SL
 - name: mixed301
   type: mixed
   port: 42301
-  proxy: 🇱🇷 利比里亚丨3x LR
+  proxy: 🇸🇿 斯威士兰丨3x SZ
 - name: mixed302
   type: mixed
   port: 42302
-  proxy: 🇩🇿 阿尔及利亚丨3x DZ
+  proxy: 🇱🇷 利比里亚丨3x LR
 - name: mixed303
   type: mixed
   port: 42303
-  proxy: 🇲🇬 马达加斯加丨3x MG
+  proxy: 🇩🇿 阿尔及利亚丨3x DZ
 - name: mixed304
   type: mixed
   port: 42304
-  proxy: 🇬🇶 赤道几内亚丨3x GQ
+  proxy: 🇲🇬 马达加斯加丨3x MG
 - name: mixed305
   type: mixed
   port: 42305
-  proxy: 🇧🇫 布基纳法索丨3x BF
+  proxy: 🇬🇶 赤道几内亚丨3x GQ
 - name: mixed306
   type: mixed
   port: 42306
-  proxy: 🇪🇷 厄立特里亚丨3x ER
+  proxy: 🇧🇫 布基纳法索丨3x BF
 - name: mixed307
   type: mixed
   port: 42307
-  proxy: 🇪🇹 埃塞俄比亚丨3x ET
+  proxy: 🇪🇷 厄立特里亚丨3x ER
 - name: mixed308
   type: mixed
   port: 42308
-  proxy: 🇲🇷 毛里塔尼亚丨3x MR
+  proxy: 🇪🇹 埃塞俄比亚丨3x ET
 - name: mixed309
   type: mixed
   port: 42309
-  proxy: 🇨🇫 中非共和国丨3x CF
+  proxy: 🇲🇷 毛里塔尼亚丨3x MR
 - name: mixed310
   type: mixed
   port: 42310
-  proxy: 🇬🇼 几内亚比绍丨3x GW
+  proxy: 🇨🇫 中非共和国丨3x CF
 - name: mixed311
   type: mixed
   port: 42311
-  proxy: 🇸🇹 圣多美和普林西比丨3x ST
+  proxy: 🇬🇼 几内亚比绍丨3x GW
 - name: mixed312
   type: mixed
   port: 42312
-  proxy: 🇦🇶 南极洲丨3x AQ
+  proxy: 🇸🇹 圣多美和普林西比丨3x ST
 - name: mixed313
   type: mixed
   port: 42313
+  proxy: 🇦🇶 南极洲丨3x AQ
+- name: mixed314
+  type: mixed
+  port: 42314
   proxy: 🇨🇳 中国大陆丨3x CN
 proxy-groups:
 - name: 节点选择
@@ -4765,6 +4780,7 @@ proxy-groups:
   - 🇰🇭 柬埔寨丨3x KH
   - 🇹🇭 泰国 01丨3x TH
   - 🇹🇭 泰国 02丨3x TH
+  - 🇹🇭 泰国家宽 01丨5x TH
   - 🇲🇲 缅甸丨10x MM
   - 🇱🇦 老挝丨5x LA
   - 🇻🇳 越南家宽 01丨2x VN
