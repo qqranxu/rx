@@ -3487,6 +3487,17 @@ proxies:
   plugin-opts:
     mode: http
     host: 2195a4c365c3.microsoft.com
+- name: 🇦🇶 南极洲丨3x AQ
+  type: ss
+  server: ix3udf69.epicgames.ink
+  port: 20031
+  cipher: aes-128-gcm
+  password: haMLMXirByn6rGVh
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 2195a4c365c3.microsoft.com
 - name: 🇨🇳 中国大陆丨3x CN
   type: ss
   server: ix3udf69.epicgames.ink
@@ -4766,6 +4777,10 @@ listeners:
 - name: mixed316
   type: mixed
   port: 42316
+  proxy: 🇦🇶 南极洲丨3x AQ
+- name: mixed317
+  type: mixed
+  port: 42317
   proxy: 🇨🇳 中国大陆丨3x CN
 proxy-groups:
 - name: 节点选择
@@ -5097,6 +5112,7 @@ proxy-groups:
   - 🇨🇫 中非共和国丨3x CF
   - 🇬🇼 几内亚比绍丨3x GW
   - 🇸🇹 圣多美和普林西比丨3x ST
+  - 🇦🇶 南极洲丨3x AQ
   - 🇨🇳 中国大陆丨3x CN
   url: http://www.gstatic.com/generate_204
   interval: 300
